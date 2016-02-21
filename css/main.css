@@ -79,6 +79,9 @@ table {
 	border-left: 3px solid #80cbc4;
 	padding-left: 2em;
 }
+.tcontent .position {
+	color: #26a69a;
+}
 .tcontent td {
 	padding-top: 0.5em;
 	padding-bottom: 0.5em;
