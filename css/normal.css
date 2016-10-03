@@ -1,0 +1,30 @@
+.n-icon-pic {
+	margin: 20px 20px 20px 20px;
+}
+
+
+.n-content {
+	margin: 20px 20px 20px 20px;
+	font-size: 25px;
+	color: black;
+}
+
+.tcontent {
+	color: black;
+	font-size: 18px;
+}
+
+.tcontent .t-time {
+	color: grey;
+	text-align: right;
+	padding: 5px 25px 5px 0px;
+	width: 20%;
+}
+
+.tcontent .info {
+	text-align: left;
+	border-left: 3px solid lightgrey;
+	padding: 5px 0px 5px 25px;
+	height: 18px;
+	line-height: 18px;
+}
