@@ -5,10 +5,11 @@
  Date produced: 3 Oct 2016
 -->
 <head>
-	<title>Sha YI | Home</title>
+	<title>Sha Yi | Home</title>
 	<link href="http://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
 	<link type="text/css" rel="stylesheet" href="css/materialize.min.css"  media="screen,projection"/>
 	<link rel="stylesheet" type="text/css" href="css/new_main.css">
+	<link rel="stylesheet" type="text/css" href="css/index.css">
 	<link rel="icon" type="image/png" href="img/icon.png" />
 
 	<meta name="viewport" content="width=device-width, initial-scale=1.0" charset="UTF-8"/>
@@ -19,15 +20,50 @@
 		<nav class="white mynav-wrapper">
 			<div class="nav-wrapper">
 				<ul id="nav-mobile" class="left hide-on-med-and-down">
-					<li><a href="new_index.html">Home</a></li>
+					<li><a id="select-nav" href="new_index.html">Home</a></li>
 					<li><a href="subpage/education.html">Education</a></li>
 					<li><a href="subpage/experiences.html">Experiences</a></li>
 					<li><a href="subpage/others.html">Others</a></li>
 					<li><a href="subpage/portfolio.html">Portfolio</a></li>
+					<li><a href="subpage/contact.html">Contact</a></li>
 				</ul>
 			</div>
 		</nav>
+
+		<div class="main-container">
+			<div class="index-pic">
+				<img src="img/profile_cartoon.jpg">
+			</div>
+			<div class="index-topic">
+				<div class="row">
+					<div class="col s9 index-welcome">
+						<div>
+							WELCOME TO <a class="btn tooltipped mytooltipped" data-position="bottom" data-delay="30" data-tooltip="'Yi' is my family name. We Chinese put family name first, so 'Yisha' is how my name is called in Chinese and I always prefer the authentic way :)">YISHA'S</a> <a class="btn tooltipped mytooltipped" data-position="bottom" data-delay="30" data-tooltip="I believe island is a place on which things are different from its surrounding ocean and continent">ISLAND</a>
+						</div>
+					</div>
+					<div class="col s3 index-chi">
+						<span>|  伊  莎</span>
+					</div>
+				</div>
+			</div>
+			<div class="index-intro">
+				<div class="row">
+					<div class="index-intro-text">
+						<span>Passionate learner and traveler. Interested in robotics, human-computer interaction, and all kinds of cool stuff. </span>
+					</div>
+				</div>
+			</div>
+		</div>
+
+		<footer class="main-footer">
+			<div class="main-footer-warpper">
+				<span>© 2016 Sha Yi</span>
+			</div>
+		</footer>
 	</div>
+	<script type="text/javascript" src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
+	<script type="text/javascript" src="js/materialize.min.js"></script>
+	<script src="js/new_main.js" type="text/javascript" charset="utf-8" async defer></script>
 </body>
 
 </html>
