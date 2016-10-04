@@ -1,0 +1,66 @@
+.contact-pic {
+	margin:  80px 10px 10px 10px;
+}
+.contact-pic img {
+	opacity: 0.9;
+	border-radius: 25px;
+}
+
+.contact-content {
+	margin: 30px 10px 10px 10px;
+}
+
+.about-contact {
+	color: grey;
+	text-align: center;
+	padding:  10px;
+}
+
+.contact-name {
+	height: 32px;
+	line-height: 32px;
+	padding-bottom: 40px;
+	border-bottom: 1px solid black;
+}
+.name-eng {
+	font-family: "Courier New", Courier, monospace;
+	font-size: 32px;
+	color: black;
+}
+.name-sep {
+	font-size: 30px;
+	color: grey;
+}
+.name-chi {
+	font-size: 26px;
+	color: grey;
+}
+
+.about-desp {
+	font-size: 16px;
+}
+.about-desp p {
+	text-indent: 2em;
+	text-align: justify;
+	line-height: 18px;
+}
+
+.about-quote {
+	padding: 15px;
+}
+
+.icon-wrapper {
+	text-align: center;
+}
+.icon-wrapper img {
+	opacity: 0.6;
+	width: 50px;
+	transition: opacity .3s ease-in-out;
+	margin: 15px 25px 15px 25px;
+	display: inline-block;
+}
+.icon-wrapper img:hover {
+	opacity: 0.4;
+	transition: opacity .3s ease-in-out;
+	cursor: pointer;
+}
