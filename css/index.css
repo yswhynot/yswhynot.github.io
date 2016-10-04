@@ -1,20 +1,21 @@
 .index-pic img{
-	opacity: 0.5;
+	opacity: 0.4;
 	width: 100%;
 }
 
 .index-topic {
+	margin: 20px 0px 20px 0px;
 	border-bottom: 1px solid black;
 }
 
 .index-welcome {
 	font-family: "Courier New", Courier, monospace;
-	font-size: 32px;
+	font-size: 30px;
 	letter-spacing: 2px;
 	color: black;
 	text-align: right;
-	height: 32px;
-	line-height: 32px;
+	height: 30px;
+	line-height: 30px;
 }
 
 .mytooltipped {
@@ -35,16 +36,16 @@
 }
 
 .index-chi {
-	font-size: 25px;
+	font-size: 24px;
 	letter-spacing: 2px;
 	color: grey;
 	text-align: left;
-	height: 32px;
-	line-height: 32px;
+	height: 30px;
+	line-height: 30px;
 }
 
 .index-intro {
-	margin: 10px 10px 10px 10px;
+	margin: 25px 10px 25px 10px;
 }
 .index-intro-text {
 	text-align: center;

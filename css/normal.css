@@ -1,0 +1,60 @@
+.n-icon-pic {
+	margin: 20px 20px 20px 20px;
+}
+
+.n-content-title {
+	margin: 10px;
+}
+
+.n-content {
+	margin: 20px 20px 20px 20px;
+	font-size: 25px;
+	color: black;
+}
+
+.tcontent {
+	margin: 15px 0px 25px 0px;
+	color: black;
+	font-size: 18px;
+}
+
+.tcontent .t-time {
+	color: grey;
+	text-align: right;
+	padding: 5px 25px 5px 0px;
+	width: 15%;
+}
+
+.tcontent .info {
+	text-align: left;
+	border-left: 3px solid lightgrey;
+	padding: 5px 0px 5px 25px;
+	height: 18px;
+	line-height: 18px;
+}
+
+.tcontent .info-detail {
+	text-align: justify;
+	font-size: 16px;
+	border-left: 3px solid lightgrey;
+	padding: 5px 0px 5px 25px;
+	height: 18px;
+	line-height: 18px;
+}
+.tpic {
+	width: 150px;
+}
+.tpic img{
+	max-width: 150px;
+	width: auto;
+	height: auto;
+	padding-left: 15px;
+}
+
+.tcontent .info-link {
+	text-align: left;
+	border-left: 3px solid lightgrey;
+	padding: 5px 0px 5px 25px;
+	height: 18px;
+	line-height: 18px;
+}
