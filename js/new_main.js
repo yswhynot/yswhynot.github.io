@@ -1,3 +1,3 @@
 $(document).ready(function(){
-    $('.tooltipped').tooltip({delay: 50});
-  });
+	$('.tooltipped').tooltip({delay: 50});
+});

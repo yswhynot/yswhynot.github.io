@@ -17,12 +17,11 @@
 	color: black;
 	font-size: 18px;
 }
-
-.tcontent .t-time {
+.t-time {
 	color: grey;
 	text-align: right;
 	padding: 5px 25px 5px 0px;
-	width: 15%;
+	width: 20%;
 }
 
 .tcontent .info {
