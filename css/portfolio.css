@@ -1,0 +1,48 @@
+.section-title {
+	margin: 20px 20px 20px 20px;
+	font-size: 25px;
+	color: black;
+	border-bottom: 1px solid black;
+	/* padding: 10px 10px 10px 10px; */
+}
+
+.table-of-contents li a {
+	padding-left: 14px;
+	font-size: 16px;
+	border-left: 1px solid white;
+	-o-transition: all .5s ease-in;
+	-ms-transition: all .5s ease-in;
+	-moz-transition: all .5s ease-in;
+	-webkit-transition: all .5s ease-in;
+	transition: all .5s ease-in;
+}
+.table-of-contents li a:hover {
+	padding-left: 14px;
+	border-left: 1px solid lightgrey;
+	-o-transition: all .5s ease-in;
+	-ms-transition: all .5s ease-in;
+	-moz-transition: all .5s ease-in;
+	-webkit-transition: all .5s ease-in;
+	transition: all .5s ease-in;
+}
+.table-of-contents li a.active {
+	padding-left: 13px;
+	border-left: 2px solid grey;
+}
+
+.tabs-wrapper {
+	position: relative;
+	margin-top: 30px;
+}
+
+.pin-top {
+	position: relative;
+}
+
+.pin-bottom {
+	position: relative;
+}
+
+.pinned {
+	position: fixed !important;
+}
