@@ -70,22 +70,22 @@
 	background-color: white;
 	width: 100%;
 	height: 100%;
-	-o-transition: opacity .5s ease-in;
-	-ms-transition: opacity .5s ease-in;
-	-moz-transition: opacity .5s ease-in;
-	-webkit-transition: opacity .5s ease-in;
-	transition: opacity .5s ease-in;
+	-o-transition: opacity .5s ease-in-out;
+	-ms-transition: opacity .5s ease-in-out;
+	-moz-transition: opacity .5s ease-in-out;
+	-webkit-transition: opacity .5s ease-in-out;
+	transition: opacity .5s ease-in-out;
 	padding-left: 25px;
 	color: darkgrey;
 }
 
 .item-hidden:hover {
 	opacity: 0.8;
-	-o-transition: opacity .5s ease-in;
-	-ms-transition: opacity .5s ease-in;
-	-moz-transition: opacity .5s ease-in;
-	-webkit-transition: opacity .5s ease-in;
-	transition: opacity .5s ease-in;
+	-o-transition: opacity .5s ease-in-out;
+	-ms-transition: opacity .5s ease-in-out;
+	-moz-transition: opacity .5s ease-in-out;
+	-webkit-transition: opacity .5s ease-in-out;
+	transition: opacity .5s ease-in-out;
 }
 
 .item-hidden .item-time {
@@ -107,20 +107,20 @@
 	padding-left: 14px;
 	font-size: 16px;
 	border-left: 1px solid white;
-	-o-transition: all .5s ease-in;
-	-ms-transition: all .5s ease-in;
-	-moz-transition: all .5s ease-in;
-	-webkit-transition: all .5s ease-in;
-	transition: all .5s ease-in;
+	-o-transition: all .5s ease-in-out;
+	-ms-transition: all .5s ease-in-out;
+	-moz-transition: all .5s ease-in-out;
+	-webkit-transition: all .5s ease-in-out;
+	transition: all .5s ease-in-out;
 }
 .table-of-contents li a:hover {
 	padding-left: 14px;
 	border-left: 1px solid lightgrey;
-	-o-transition: all .5s ease-in;
-	-ms-transition: all .5s ease-in;
-	-moz-transition: all .5s ease-in;
-	-webkit-transition: all .5s ease-in;
-	transition: all .5s ease-in;
+	-o-transition: all .5s ease-in-out;
+	-ms-transition: all .5s ease-in-out;
+	-moz-transition: all .5s ease-in-out;
+	-webkit-transition: all .5s ease-in-out;
+	transition: all .5s ease-in-out;
 }
 .table-of-contents li a.active {
 	padding-left: 13px;
