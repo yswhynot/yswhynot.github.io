@@ -53,12 +53,13 @@
 	padding: 0px 0px 0px 0px;
 	margin: 0px 0px 0px 0px;
 	overflow: hidden;
+	text-align: center;
 }
 .p-item-img-h img {
 	width: auto;
 	height: 100%;
 }
 .p-item-img-v img {
-	width: auto;
-	height: 100%;
+	width: 100%;
+	height: auto;
 }
