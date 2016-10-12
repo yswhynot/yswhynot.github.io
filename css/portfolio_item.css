@@ -36,16 +36,24 @@
 }
 
 .p-item-title {
-	margin: 20px 5px 10px 5px;
+	margin: 20px 5px 5px 5px;
 	text-align: center;
 	font-size: 30px;
 	color: black;
+}
+.p-item-desc {
+	opacity: 0.5;
+	margin-right: 5px;
+	margin-bottom: 15px;
+	text-align: right;
+	color: grey;
+	font-size: 16px;
 }
 
 .p-item-content {
 	font-size: 16px;
 	padding: 10px;
-	margin: 10px 0px 10px 0px;
+	margin: 15px 0px 15px 0px;
 }
 .p-item-content ul {
 	padding-left: 30px;
@@ -59,6 +67,7 @@
 }
 
 .p-item-imgs {
+	margin: 10px 0px 10px 0px;
 	text-align: center;
 }
 .p-item-img {
@@ -88,7 +97,7 @@
 
 .p-item-icons {
 	text-align: center;
-	margin: 20px;
+	margin: 40px 10px 20px 10px;
 }
 .p-item-icon {
 	display: inline-block;
