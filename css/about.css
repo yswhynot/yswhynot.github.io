@@ -5,6 +5,9 @@
 	opacity: 0.9;
 	border-radius: 25px;
 }
+.col {
+	position: relative;
+}
 
 .contact-content {
 	margin: 30px 10px 10px 10px;
@@ -24,16 +27,55 @@
 }
 .name-eng {
 	font-family: "Courier New", Courier, monospace;
-	font-size: 32px;
+	font-size: 30px;
 	color: black;
 }
 .name-sep {
-	font-size: 30px;
+	font-size: 26px;
 	color: grey;
 }
 .name-chi {
 	font-size: 22px;
 	color: grey;
+}
+
+.mytooltipped {
+	padding: 5px;
+	font-size: 36px;
+	height: 36px;
+	line-height: 36px;
+	background-color: transparent;
+	color: grey;
+	-webkit-box-shadow: none;
+	-moz-box-shadow: none;
+	box-shadow: none;
+}
+.mytooltipped:hover {
+	background-color: transparent;
+	color: grey;
+	-webkit-box-shadow: none;
+	-moz-box-shadow: none;
+	box-shadow: none;
+}
+.name-cv {
+	position: absolute;
+	top: 0px;
+	right: 0px;
+	margin: 10px;
+	opacity: 1;
+	-o-transition: all .5s ease-in-out;
+	-ms-transition: all .5s ease-in-out;
+	-moz-transition: all .5s ease-in-out;
+	-webkit-transition: all .5s ease-in-out;
+	transition: all .5s ease-in-out;
+}
+.name-cv:hover {
+	opacity: 0.5;
+	-o-transition: all .5s ease-in-out;
+	-ms-transition: all .5s ease-in-out;
+	-moz-transition: all .5s ease-in-out;
+	-webkit-transition: all .5s ease-in-out;
+	transition: all .5s ease-in-out;
 }
 
 .about-desp {
