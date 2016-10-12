@@ -42,18 +42,40 @@
 	color: black;
 }
 
+.p-item-content {
+	font-size: 16px;
+	padding: 10px;
+	margin: 10px 0px 10px 0px;
+}
+.p-item-content ul {
+	padding-left: 30px;
+}
+.p-item-content ul li{
+	list-style-type: disc;
+}
+
+.myvideo-wrapper {
+	margin: 10px;
+}
+
+.p-item-imgs {
+	text-align: center;
+}
 .p-item-img {
 	position: relative;
 	display: inline-block;
-	width: 33%;
+	width: 30%;
 	top: 0;
     bottom: 0;
     left: 0;
     right: 0;
-	padding: 0px 0px 0px 0px;
-	margin: 0px 0px 0px 0px;
+	margin: 1% 1% 1% 1%;
 	overflow: hidden;
 	text-align: center;
+}
+.material-placeholder {
+	width: 100%;
+	height: 100%;
 }
 .p-item-img-h img {
 	width: auto;
