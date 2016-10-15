@@ -1,460 +1,76 @@
 <!DOCTYPE html>
 <html>
- <!-- 
- Yisha's Personal Website
- Date produced: 17 Feb 2016
-
- My first personal website!! So excited!!
+<!-- 
+ Yisha's Personal Website v2.0
+ Date produced: 3 Oct 2016
 -->
 <head>
-	<title>Sha YI | Home</title>
+	<title>Yi Sha | Home</title>
 	<link href="http://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
 	<link type="text/css" rel="stylesheet" href="css/materialize.min.css"  media="screen,projection"/>
-	<link rel="stylesheet" type="text/css" href="css/main.css">
+	<link rel="stylesheet" type="text/css" href="css/new_main.css">
+	<link rel="stylesheet" type="text/css" href="css/index.css">
 	<link rel="icon" type="image/png" href="img/icon.png" />
 
 	<meta name="viewport" content="width=device-width, initial-scale=1.0" charset="UTF-8"/>
 </head>
 
-<body class="teal lighten-5">
-	<div class="navbar-fixed">
-		<nav class="teal lighten-3">
-			<div class="nav-wrapper my-nav-wrapper">
-				<a href="#" class="brand-logo right">Sha YI</a>
-				<ul class="section table-of-contents left hide-on-med-and-down navcust">
-					<li><a href="#profile">Profile</a></li>
-					<li><a href="#education">Education</a></li>
-					<li><a href="#work">Work Experience</a></li>
-					<li><a href="#project">Projects</a></li>
-					<li><a href="#skill">Skills</a></li>
-					<li><a href="#language">Languages</a></li>
-					<li><a href="#award">Awards &amp; Scholarships</a></li>
-					<li><a href="#social">Social Activities</a></li>
+<body>
+	<div class="nodisplay hide-on-large-only">
+		<div class="nodisplay-icon">
+			<img src="img/icon/pic_404.jpg">
+		</div>
+		<div class="nodisplay-text">
+			<span>Sorry I currently don't support mobile devices, please use PC/Mac with browser full screen instead :( </span>
+		</div>
+	</div>
+	<div class="container hide-on-med-and-down">
+		<nav class="white mynav-wrapper">
+			<div class="nav-wrapper">
+				<ul id="nav-mobile" class="left hide-on-med-and-down">
+					<li><a id="select-nav" href="index.html">Home</a></li>
+					<li><a href="subpage/about.html">About</a></li>
+					<li><a href="subpage/education.html">Education</a></li>
+					<li><a href="subpage/experiences.html">Technical Experiences</a></li>
+					<li><a href="subpage/portfolio.html">Portfolio</a></li>
 				</ul>
 			</div>
 		</nav>
-	</div>
-	<div class="container">
-		<div class="row">
-			<div class="col s12">
-				<div class="card lime lighten-5">
-					<div class="card-content teal-text text-darken-3">
-						<div id="profile" class="section scrollspy">
-							<div class="row">
-								<div class="col s3">
-									<img src="img/profile.jpg" class="profilepic" onclick="window.open(this.src)" onmouseover="" style="cursor: pointer;">
-								</div>
-								<div class="col s7 offset-s1 grey-text text-darken-2">
-									<br>
-									<p style="font-size: 1.5em;"><b>Sha YI (Yisha)</b></p>
-									<p style="font-size: 1.5em;"><b>伊莎</b></p>
-									<p>Passionate learner and traveler. Interested in robotics, human-robot interaction, and all kinds of cool staff. Enjoy traveling and exploring new places.</p>
-									<p>I hope to use technology to help people from unprivileged background and build things that push the human civilization forward &#9787;</p>
-									<table class="tcontact grey-text text-darken-2">
-										<tr>
-											<td>Email:</td>
-											<td><a href="mailto:yswhynot@gmail.com">yswhynot@gmail.com</a></td>
-										</tr>
-										<tr>
-											<td>Phone:</td>
-											<td>+852 6670-4123 / +86 135-2081-4551 / +1 412-888-6747</td>
-										</tr>
-									</table>
-									<div class="icon-wrapper">
-										<a target="_blank" href="https://www.facebook.com/yisha.yi.3"><img id="fb" src="img/facebook-logo.svg"></a>
-										<a target="_blank" href="https://plus.google.com/u/0/101452091538681330400/posts"><img id="ggp" src="img/social-google-plus-square-button.svg"></a>
-										<a target="_blank" href="https://hk.linkedin.com/in/sha-yi-128031a8"><img id="lkin" src="img/linkedin-button-logo.svg"></a>
-										<a target="_blank" href="https://github.com/yswhynot"><img id="github" src="img/github-sign.svg"></a>
-									</div>
-								</div>
-							</div>
+
+		<div class="main-container">
+			<div class="index-pic">
+				<img src="img/profile_cartoon.jpg">
+			</div>
+			<div class="index-topic">
+				<div class="row">
+					<div class="col s9 index-welcome">
+						<div>
+							WELCOME TO <a class="btn tooltipped mytooltipped" data-position="bottom" data-delay="30" data-tooltip="'Yi' is my family name. We Chinese put family name first, so 'Yisha' is how my name is called in Chinese and I always prefer the authentic way :)">YISHA'S</a> <a class="btn tooltipped mytooltipped" data-position="bottom" data-delay="30" data-tooltip="I believe island is a place on which things are different from its surrounding ocean and continent">ISLAND</a>
 						</div>
-						<div id="education" class="section scrollspy">
-							<span class="card-title">Education</span><hr>
-							<div class="row">
-								<div class="col s12 grey-text text-darken-2">
-									<table class="tcontent">
-										<tr>
-											<td rowspan="3" width="18%">Mar. 2013 - Current</td>
-											<td class="info">Bachelor of Engineering (Honors) in Electronic and Information Engineering</td>
-										</tr>
-										<tr><td class="info"><b>The Hong Kong Polytechnic University</b></td></tr>
-										<tr><td class="info">GPA: 3.87/4.0</td></tr>
-										<tr><td></td></tr>
-										<tr>
-											<td rowspan="2" width="18%">Sep. 2012 - Feb. 2013</td>
-											<td class="info">Bachelor of Science (Honors) in Applied Biology with Biotechnology</td>
-										</tr>
-										<tr><td class="info"><b>The Hong Kong Polytechnic University</b></td></tr>
-										<tr><td></td></tr>
-										<tr>
-											<td rowspan="2" width="18%">Sep. 2014 - Dec. 2014</td>
-											<td class="info">Engineering Exchange Program</td>
-										</tr>
-										<tr><td class="info"><b>University of Waterloo</b></td></tr>
-									</table>
-								</div>
-							</div>
-						</div>
-						<br>
-						<div id="work" class="section scrollspy">
-							<span class="card-title">Work Experience</span><hr>
-							<div class="row">
-								<div class="col s12 grey-text text-darken-2">
-									<table class="tcontent">
-										<tr>
-											<td rowspan="3" width="18%">Jun. 2016 - Aug. 2016</td>
-											<td class="info position">Robotics Institute Summer Scholar, <b>Carnegie Mellon University</b></td>
-											<td class="tpic" rowspan="3" width="18%"><img src="img/cmu_ri.png"></td>
-										</tr>
-										<tr>
-											<td class="info"><i>Biorobotics Lab</i></td>
-										</tr>
-										<tr>
-											<td class="info"> Developed <b>Visual Odometry</b> for multiple robots in the lab including snakes, snake monster (6 leg spider-like walking robot), and wheeled robot. Made use of the <b>ORB-SLAM</b> algorithm for development.
-											</td>
-										</tr>
-										<tr><td></td></tr>
-										<tr>
-											<td rowspan="3" width="18%">Jan. 2016 - Mar. 2016</td>
-											<td class="info position">Software Development Internship, <b>RavenTech</b></td>
-											<td class="tpic" rowspan="3" width="18%"><img src="img/raventech.jpg"></td>
-										</tr>
-										<tr>
-											<td class="info"><i>Web Development Group</i></td>
-										</tr>
-										<tr>
-											<td class="info">Built the official <a href="https://www.raventech.com/">website</a>.<br> - Frontend development with ejs, CSS3, javascript <br>
-												- Backend development with Node.js, with express framework
-											</td>
-										</tr>
-										<tr><td></td></tr>
-										<tr>
-											<td rowspan="3" width="18%">July 2015 - Dec. 2015</td>
-											<td class="info position">Software Engineer Internship, <b>Microsoft Asia Research and Development</b></td>
-											<td class="tpic" rowspan="4" width="18%"><img src="img/microsoft.png"></td>
-										</tr>
-										<tr>
-											<td class="info"><i>Platform and Tools Group, Cloud and Enterprise Division</i></td>
-										</tr>
-										<tr>
-											<td class="info" width="64%">Researched on applications of agricultural big data. Developed the <b>Android</b> Bluetooth application and conducted backend programming with <b>Python</b>, interacting with <b>MongoDB</b>. Developed distributed web crawling system with popular open-source crawlers including <b>Nutch</b> and <b>Scrapy</b>, which is intergrated with <b>Hadoop</b> and <b>HBase</b>. Also developed application of <b>WPF</b> for demonstration.</td>
-										</tr>
-									</table>
-								</div>
-							</div>
-						</div>
-						<div id="project" class="section scrollspy">
-							<span class="card-title">Projects</span><hr>
-							<div class="row">
-								<div class="col s12 grey-text text-darken-2">
-									<div class="project-item">
-										<table class="tcontent">
-											<tr>
-												<td>
-													<div class="project-title">Summer 2016&nbsp;&nbsp;&nbsp;&nbsp;
-														<u>Visual Odometry</u>
-													</div>
-													<p><i>Robotics Institute, Carnegie Mellon University</i></p>
-													<p>Supervisor: <a href="http://www.cs.cmu.edu/~./choset/bio.html">Howie Choset</a><br>Implemented Visual Odometry system and modified the SLAM system based on <a href="http://webdiis.unizar.es/~raulmur/MurMontielTardosTRO15.pdf">ORB-SLAM</a>.</p>
-													<p>Source code could be found <a href="https://github.com/yswhynot/ORB_SLAM_biorobotics">here</a>. A documentation for the system could be found <a href="https://github.com/yswhynot/ORB_SLAM_biorobotics/wiki">here</a>.</p>
-													<p>The pdf for the poster demonstration could be found <a href="https://drive.google.com/open?id=0B-SiKzQe4ZZmV2VwMlgxb2E3aDA">here</a>.</p>
-													
-												</td>
-												<td width="18%">
-													<img src="img/biorobotics.png" class="project-icon">
-												</td>
-											</tr>
-										</table>
-									</div>
-									<div class="project-item">
-										<table class="tcontent">
-											<tr>
-												<td>
-													<div class="project-title">Summer 2014&nbsp;&nbsp;&nbsp;&nbsp;
-														<u>WiFi Controlled Model Car</u>
-													</div>
-													<p><i>Industrial Centre, The Hong Kong Polytechnic University</i></p>
-													<p>Developed Android-based remote-controlled model car. Responsible for PCB design and fabrication, MCU programming with MPLAB, final demonstration website design, Android application. Assisted with the casing design using Solidworks.</p>
-													<p>We call our model car Syzz Tank, as the short hand of the names our four team members. The functionalities of the Syzz Tank include:</p>
-													<ul>
-														<li>Move around according to the instructions from the Android phone</li>
-														<li>LED lights indicating moving direction</li>
-														<li>Detect obstacles in front and stop/resume its movement accordingly.</li>
-													</ul>
-												</td>
-												<td width="18%">
-													<img src="img/syzz_case.jpg" class="project-icon">
-												</td>
-											</tr>
-										</table>
-										<img src="img/syzz_inside.jpg" class="project-img">
-										<img src="img/syzz_pcb.jpg" class="project-img">
-										<img src="img/syzz_layout.jpg" class="project-img">
-									</div>
-									<div class="project-item">
-										<table class="tcontent">
-											<tr>
-												<td>
-													<div class="project-title">Apr. 2015&nbsp;&nbsp;&nbsp;&nbsp;
-														<u>Online Pokemon House</u>
-													</div>
-													<p><i>Web Application Course Project, The Hong Kong Polytechnic University</i></p>
-													<p>Built the web database application of raising Pokemon online, with HTML, Javascript, CSS, and jQuery as front end, PHP and mySQL as back end.</p>
-													<p>The application allows users to:</p>
-													<ul>
-														<li>Register and add friends</li>
-														<li>Buy and feed Pokemon</li>
-														<li>Send their Pokemon to work</li>
-														<li>Get them married with other pokemon from friends, and then give birth to new pokemon</li>
-													</ul>
-												</td>
-												<td width="18%">
-													<img src="img/pokemon.jpg" class="project-icon">
-												</td>
-											</tr>
-										</table>
-										<img src="img/pokemon_home.png" class="project-img">
-										<img src="img/pokemon_pq.png" class="project-img">
-										<img src="img/pokemon_marry.png" class="project-img">
-									</div>
-									<div class="project-item">
-										<table class="tcontent">
-											<tr>
-												<td>
-													<div class="project-title">Sep. 2014&nbsp;&nbsp;&nbsp;&nbsp;
-														<u>Home Automation System</u>
-													</div>
-													<p><i>Hackathon of Hack the North, University of Waterloo</i></p>
-													<p>Designed a home automation system monitored by Arduino and Spark processor. Responsible for MCU programming, circuit design, and UI design.</p>
-													<p>Project could be find here: <a target="_blank" href="https://github.com/CBenar/Hack-The-North">github link</a></p>
-												</td>
-												<td width="18%">
-													<img src="img/hacknorth.png" class="project-icon">
-												</td>
-											</tr>
-										</table>
-									</div>
-									<div class="project-item">
-										<table class="tcontent">
-											<tr>
-												<td>
-													<div class="project-title">Jun. 2014&nbsp;&nbsp;&nbsp;&nbsp;
-														<u>Water Testing Device</u>
-													</div>
-													<p><i>Service Trip, Indonesia</i></p>
-													<p>Developed a water testing device with Arduino and simple circuit, which determined the water pollution level by calculating the conductivity of water fluid.</p>
-												</td>
-												<td width="18%">
-													<img src="img/arduino.jpg" class="project-icon">
-												</td>
-											</tr>
-										</table>
-									</div>
-									<div class="project-item">
-										<table class="tcontent">
-											<tr>
-												<td>
-													<div class="project-title">Apr. 2014&nbsp;&nbsp;&nbsp;&nbsp;
-														<u>Desktop Poker Game</u>
-													</div>
-													<p><i>C++ Course Project, The Hong Kong Polytechnic University</i></p>
-													<p>Windows desktop application of poker game "Sevens", using C++ and .NET Framework. The game is designed with two modes: human-computer and human-human mode.</p>
-													<p>The game could:</p>
-													<ul>
-														<li>Allow the user to play with the computer</li>
-														<li>Play with another user</li>
-														<li>Provide hint when the user cannot think of a solution</li>
-													</ul>
-												</td>
-												<td width="18%">
-													<img src="img/sevens.png" class="project-icon">
-												</td>
-											</tr>
-										</table>
-										<img src="img/sevens_hint.png" class="project-img">
-										<img src="img/sevens_reg.png" class="project-img">
-									</div>
-									<div class="project-item">
-										<table class="tcontent">
-											<tr>
-												<td>
-													<div class="project-title">Oct 2015&nbsp;&nbsp;&nbsp;&nbsp;
-														<u>SmartPOS</u>
-													</div>
-													<p><i>Cyberport Micro Fund, Hong Kong</i></p>
-													<p>Built the SmartPOS project Android application. We propose a smart POS system that serves the item check out process in convenience stores and supermarkets. Customers are able to do self-payment with their own mobile phone application so that they do not need to wait in the long queue to check out their items.</p>
-													<p>Project could be found here: <a target="_blank" href="https://github.com/yswhynot/BarCode">github link</a></p>
-												</td>
-												<td width="18%">
-													<img src="img/smartpos.png" class="project-icon">
-												</td>
-											</tr>
-										</table>
-									</div>
-									<div class="project-item">
-										<table class="tcontent">
-											<tr>
-												<td>
-													<div class="project-title">May 2015&nbsp;&nbsp;&nbsp;&nbsp;
-														<u>Object Recognition Project</u>
-													</div>
-													<p><i>Just for fun</i></p>
-													<p>Wrote a simple furniture recognition project with Haar Classifier and OpenCV.</p>
-												</td>
-												<td width="18%">
-													<img src="img/opencv.png" class="project-icon">
-												</td>
-											</tr>
-										</table>
-									</div>
-									<div class="project-item">
-										<table class="tcontent">
-											<tr>
-												<td>
-													<div class="project-title">Feb 2015&nbsp;&nbsp;&nbsp;&nbsp;
-														<u>WeDine iOS Application</u>
-													</div>
-													<p><i>Micro Fund for Innovation &amp; Entrepreneurship, Hong Kong</i></p>
-													<p>Started building an iOS appliction that, enables users to schedule dinner or gathering together. Responsible for database design and programming. Also involved in designing business model with students from Finance major.</p>
-												</td>
-												<td width="18%">
-													<img src="img/wedine.png" class="project-icon">
-												</td>
-											</tr>
-										</table>
-									</div>
-								</div>
-							</div>
-						</div>
-						<div id="skill" class="section scrollspy">
-							<span class="card-title">Skills</span><hr>
-							<div class="row">
-								<div class="col s12 grey-text text-darken-2">
-									<table class="tcontent">
-										<tr>
-											<td width="18%" rowspan="2">Programming Language</td>
-											<td><b>Basic</b>: PHP, Javascript, C#, Objective-C</td>
-										</tr>
-										<tr>
-											<td><b>Intermediate</b>: sql, C++, C, Java, Python, MATLAB, Node.js</td>
-										</tr>
-										<tr>
-											<td width="18%">Databases</td>
-											<td>mysql, MongoDB</td>
-										</tr>
-										<tr>
-											<td width="18%">Operating System</td>
-											<td>Linux(Ubuntu), MacOS, Windows</td>
-										</tr>
-										<tr>
-											<td width="18%">Software</td>
-											<td>Microsoft Office, Adobe Photoshop, PowerBI, Autocad, Solidworks</td>
-										</tr>
-										<tr>
-											<td width="18%">Hardware</td>
-											<td>Circuit design, PCB fabrication</td>
-										</tr>
-										<tr>
-											<td width="18%">Others</td>
-											<td>Arduino, Nutch, Scrapy, Hadoop, Android, OpenCV, Latex</td>
-										</tr>
-									</table>
-								</div>
-							</div>
-						</div>
-						<div id="language" class="section scrollspy">
-							<span class="card-title">Languages</span><hr>
-							<p>Chinese/Mandarin (native), English (fluent), Chinese/Cantonese (fluent), Japanese (basic)</p>
-						</div>
-						<div id="award" class="section scrollspy">
-							<span class="card-title">Awards and Scholarships</span><hr>
-							<div class="row">
-								<div class="col s12 grey-text text-darken-2">
-									<table class="tcontent">
-										<tr>
-											<td width="18%">Apr. 2015</td>
-											<td>Best GPA Award (2013/14, 2014/15 Academic Year) (Top 3 among 80)</td>
-										</tr>
-										<tr>
-											<td width="18%">May 2015</td>
-											<td>HKSAR Government Scholarship for 2013, 2014, 2015 (80,000 HKD per year)</td>
-										</tr>
-										<tr>
-											<td width="18%">Oct. 2014</td>
-											<td>The Professional Validation Council of Hong Kong Industries Scholarship</td>
-										</tr>
-										<tr>
-											<td width="18%">Oct. 2011</td>
-											<td>First Award in National Olympiad in Mathematics in Provinces (Top 0.1%)</td>
-										</tr>
-									</table>
-								</div>
-							</div>
-						</div>
-						<div id="social" class="section scrollspy">
-							<span class="card-title">Social Activities</span><hr>
-							<div class="row">
-								<div class="col s12 grey-text text-darken-2">
-									<table class="tcontent">
-										<tr>
-											<td rowspan="2" width="18%">May 2013 - May 2014</td>
-											<td class="info">Publication Secretary,&nbsp;<i>Chinese Mainland Students’ Association, HKPUSU</i></td>
-										</tr>
-										<tr>
-											<td class="info">Designed videos, posters, and publications for all events, including the Hong Kong Joint University Singing Contest.
-											</td>
-										</tr>
-										<tr><td></td></tr>
-										<tr>
-											<td rowspan="2" width="18%">Jun. 2013 - Sep. 2013</td>
-											<td class="info">Organizing Committee,&nbsp;<i>Non-local Students’ Orientation Week</i></td>
-										</tr>
-										<tr>
-											<td class="info">Organized City Hunt and other events.
-											</td>
-										</tr>
-										<tr><td></td></tr>
-										<tr>
-											<td rowspan="3" width="18%">Oct. 2013 - Sep. 2014</td>
-											<td class="info">Organizing Committee,&nbsp;<i>Enlighten Project</i></td>
-										</tr>
-										<tr>
-											<td class="info">The project is to break the <b>Guinness Record</b> of the most electricity generated in 24 hours by static cycling. Participated in the initial proposal writing and later responsible for the promotion efforts.
-											</td>
-										</tr>
-										<tr>
-											<td class="info"><a target="_blank" href="https://www.facebook.com/Enlightenpolyu-%E7%87%83%E5%95%9F%E7%90%86%E5%A4%A7%E8%B8%8F%E7%A0%B4%E7%B4%80%E9%8C%84-724918080865092/?fref=ts">Facebook Page</a></td>
-										</tr>
-										<tr><td></td></tr>
-										<tr>
-											<td rowspan="2" width="18%">May 2014 - May 2014</td>
-											<td class="info">Voluntary Teacher,&nbsp;<i>HeartFire</i></td>
-										</tr>
-										<tr>
-											<td class="info">Joined the voluntary teaching trip to a village in Yunnan province, China.
-											</td>
-										</tr>
-										<tr><td></td></tr>
-										<tr>
-											<td rowspan="2" width="18%">Jun 2014 - July 2014</td>
-											<td class="info">Voluntary Service,&nbsp;<i>Indonesia</i></td>
-										</tr>
-										<tr>
-											<td class="info">Joined the voluntary service of rural planning in Tegowanu, a village the mountain areas near Yogyakarta.
-											</td>
-										</tr>
-									</table>
-								</div>
-							</div>
-						</div>
+					</div>
+					<div class="col s3 index-chi">
+						<span>|  伊  莎</span>
+					</div>
+				</div>
+			</div>
+			<div class="index-intro">
+				<div class="row">
+					<div class="index-intro-text">
+						<span>Passionate learner and traveler. Interested in robotics, human-computer interaction, and all kinds of cool stuff. </span>
 					</div>
 				</div>
 			</div>
 		</div>
+
+		<footer class="main-footer">
+			<div class="main-footer-warpper">
+				<span>&copy; 2016 Yi Sha, with reference to Materialize CSS, FlatIconf.com</span>
+			</div>
+		</footer>
 	</div>
 	<script type="text/javascript" src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
 	<script type="text/javascript" src="js/materialize.min.js"></script>
-	<script src="js/main.js" type="text/javascript" charset="utf-8" async defer></script>
+	<script src="js/new_main.js" type="text/javascript" charset="utf-8" async defer></script>
 </body>
+
 </html>
