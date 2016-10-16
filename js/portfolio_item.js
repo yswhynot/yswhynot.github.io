@@ -15,13 +15,18 @@ function updateImgs () {
     console.log('w: ' + cw);
     // $('.p-item-img-h img').css('height', cw + 'px');
 
-    $( ".p-item-img").each(function( index ) {
-    	var img = $(this).find('img')[0];
-    	var imgw = img.clientWidth;
-    	var imgh = img.clientHeight;
-    	if(imgw > imgh)
-    		$(this).addClass('p-item-img-h');
-    	else
-    		$(this).addClass('p-item-img-v');
-    });
+    $( "img.materialboxed").each(function( index ) {
+        var img = new Image();
+        var obj = $(this);
+        img.onload = function() {
+            var imgw = img.width;
+            var imgh = img.height;
+            console.log("imgw:" + imgw);
+            if(imgw > imgh)
+               obj.parent().parent().addClass('p-item-img-h');
+            else
+               obj.parent().parent().addClass('p-item-img-v');
+       }
+       img.src = $(this).attr('src');
+   });
 }
