@@ -96,7 +96,7 @@
 }
 .icon-wrapper img {
 	opacity: 0.6;
-	width: 50px;
+	width: 40px;
 	transition: opacity .3s ease-in-out;
 	margin: 15px 25px 15px 25px;
 	display: inline-block;
