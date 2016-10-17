@@ -16,7 +16,7 @@
 .about-contact {
 	color: grey;
 	text-align: center;
-	padding:  10px;
+	padding:  10px 5px 10px 5px;
 }
 
 .contact-name {
@@ -68,6 +68,9 @@
 	-moz-transition: all .5s ease-in-out;
 	-webkit-transition: all .5s ease-in-out;
 	transition: all .5s ease-in-out;
+}
+.name-cv a i {
+	font-size: 50px;
 }
 .name-cv:hover {
 	opacity: 0.5;
