@@ -1,5 +1,9 @@
 .n-icon-pic {
 	margin: 20px 20px 20px 20px;
+	text-align: center;
+}
+.n-icon-pic img {
+	display: inline-block;
 }
 
 .n-content-title {
@@ -56,4 +60,24 @@
 	padding: 5px 0px 5px 25px;
 	height: 18px;
 	line-height: 18px;
+}
+
+.name-cv {
+	padding: 10px 10px 10px 20px;
+	text-align: right;
+	height: 30px;
+	line-height: 30px;
+	font-size: 18px;
+	position: relative;
+}
+.name-cv div {
+	display: inline-block;
+}
+.name-cv a {
+	position: relative;
+	top: 8px;
+	display: inline-block;
+}
+.name-cv a i {
+	font-size: 38px;
 }
