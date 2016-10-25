@@ -23,6 +23,14 @@
 		ga('create', 'UA-85989321-1', 'auto');
 		ga('send', 'pageview');
 	</script>
+
+	<script type="text/javascript" src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
+	<script type="text/javascript">
+		$(document).ready(function() {
+			$(".main-container").css("display", "none");
+			$(".main-container").fadeIn(2000);
+		});
+	</script>
 </head>
 
 <body>
@@ -71,15 +79,13 @@
 					</div>
 				</div>
 			</div>
+			<footer class="main-footer">
+				<div class="main-footer-warpper">
+					<span>&copy; 2016 Yi Sha, based on Materialize CSS, FlatIconf.com</span>
+				</div>
+			</footer>
 		</div>
-
-		<footer class="main-footer">
-			<div class="main-footer-warpper">
-				<span>&copy; 2016 Yi Sha, based on Materialize CSS, FlatIconf.com</span>
-			</div>
-		</footer>
 	</div>
-	<script type="text/javascript" src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
 	<script type="text/javascript" src="js/materialize.min.js"></script>
 	<script src="js/new_main.js" type="text/javascript" charset="utf-8" async defer></script>
 </body>

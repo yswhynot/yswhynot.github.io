@@ -1,6 +1,16 @@
 $(document).ready(function(){
     $('.tooltipped').tooltip({delay: 50});
-  });
+
+    $("#nav-mobile li a").click(function(event){
+        event.preventDefault();
+        linkLocation = this.href;
+        $(".main-container").fadeOut(1000, redirectPage);      
+    });
+
+    function redirectPage() {
+        window.location = linkLocation;
+    }
+});
 
 (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
 	(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
