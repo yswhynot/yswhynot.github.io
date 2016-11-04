@@ -21,7 +21,7 @@ function updateImgs () {
         img.onload = function() {
             var imgw = img.width;
             var imgh = img.height;
-            console.log("imgw:" + imgw);
+            // console.log("imgw:" + imgw);
             if(imgw > imgh)
                obj.parent().parent().addClass('p-item-img-h');
             else

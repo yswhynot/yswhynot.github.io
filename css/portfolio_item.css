@@ -1,7 +1,6 @@
 .p-item-nav {
 	font-size: 18px;
 	color: black;
-	opacity: 0.5;
 	line-height: 20px;
 	height: 20px;
 }
@@ -11,9 +10,8 @@
 	color: black;
 }
 
-.p-item-nav-port {
-	text-align: right;
-	opacity: 0.5;
+.p-item-nav-port a {
+	opacity: 0.3;
 	-o-transition: opacity .5s ease-in-out;
 	-ms-transition: opacity .5s ease-in-out;
 	-moz-transition: opacity .5s ease-in-out;
@@ -21,7 +19,7 @@
 	transition: opacity .5s ease-in-out;
 }
 
-.p-item-nav-port:hover {
+.p-item-nav-port a:hover {
 	opacity: 0.8;
 	-o-transition: opacity .5s ease-in-out;
 	-ms-transition: opacity .5s ease-in-out;
@@ -40,6 +38,9 @@
 	text-align: center;
 	font-size: 30px;
 	color: black;
+}
+.p-item-nav-name span {
+	opacity: 0.8;
 }
 .p-item-desc {
 	opacity: 0.5;
