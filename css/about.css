@@ -25,11 +25,14 @@
 	line-height: 32px;
 	padding-bottom: 40px;
 	border-bottom: 1px solid black;
+	text-align: center;
 }
 .name-eng {
-	font-family: "Courier New", Courier, monospace;
+	/*font-family: "Orbitron";*/
 	font-size: 30px;
 	color: black;
+	padding-right: 10px; 
+	letter-spacing: 2px;
 }
 .name-sep {
 	font-size: 26px;
