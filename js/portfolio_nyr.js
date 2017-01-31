@@ -14,7 +14,7 @@ function updateUrls() {
   else
     $('.nav-left').remove();
 
-  if((index + 1) < page_list.length)
+  if((index + 1) <= page_list.length)
     $('.nav-right').attr('href', page_list[index + 1]);
   else
     $('.nav-right').remove();
