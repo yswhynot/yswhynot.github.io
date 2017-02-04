@@ -33,7 +33,7 @@ function updateImgs () {
 }
 
 function updateUrls() {
-  var page_list = ['visual_odometry.html', 'apriltag.html', 'wifi_car.html', 'pokemon.html', 'pano.html', 'poker.html', 'memsi.html', 'water_test.html', 'hack_north.html', 'smart_pos.html', 'wedine.html', '2014.html', '2015.html', '2016.html','2017.html'];
+  var page_list = ['fyp.html', 'visual_odometry.html', 'apriltag.html', 'wifi_car.html', 'pokemon.html', 'pano.html', 'poker.html', 'memsi.html', 'water_test.html', 'hack_north.html', 'smart_pos.html', 'wedine.html', '2014.html', '2015.html', '2016.html','2017.html'];
   var page_name = location.pathname.substring(location.pathname.lastIndexOf("/") + 1);
   // console.log(page_name);
 
