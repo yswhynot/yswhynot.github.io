@@ -1,8 +1,8 @@
 <!DOCTYPE html>
 <html>
 <!-- 
- Yisha's Personal Website v2.0
- Date produced: 3 Oct 2016
+ Yisha's Personal Website v2.1
+ Date produced: 16 Nov 2018
 -->
 <head>
 	<title>Yi Sha | About</title>
@@ -33,10 +33,9 @@
 				<ul id="nav-mobile" class="left hide-on-med-and-down">
 					<li><a href="../index.html">Home</a></li>
 					<li><a id="select-nav" href="about.html">About</a></li>
+					<li><a href="pub.html">Publication</a></li>
 					<li><a href="cv.html">CV</a></li>
-					<!-- <li><a href="experiences.html">Technical Experiences</a></li>
-					<li><a href="others.html">Others</a></li>
-				-->					<li><a href="portfolio.html">Portfolio</a></li>
+					<li><a href="portfolio.html">Portfolio</a></li>
 			</ul>
 		</div>
 	</nav>
@@ -63,14 +62,13 @@
 						<div class="about-contact">
 							<span style="font-size: 16px;"><a href="mailto:yswhynot@gmail.com">yswhynot@gmail.com</a></span>
 							<span>|</span>
-							<span>(+852) 6670-4123</span>
+							<span>(+1) 412-628-1010</span>
 							<span>|</span>
 							<span>(+86) 135-2081-4551</span>
 						</div>
 						<div class="about-desp">
-							<p>Enjoy traveling and exploring new places.</p>
-							<p>Hope to use technology to help people from unprivileged background and build things that push the human civilization forward &#9786;</p>
-							<p>When not playing with computers and circuits, I enjoy exploring new restaurants, taking care of pets and plants, reading novels, watching Japanese animations, and jogging along Victoria Harbour.</p>
+							<p>I love building robots, taking care and playing with them. I am interested in robotics in general, but mostly planning and decison making in robotics systems. My ultimate goal for research is to build fully autonomous robot systems that could help us in our daily life. </p>
+							<p>When not playing with computers and circuits, I enjoy exploring new restaurants, taking care of pets and plants, reading novels, watching Japanese animations, playing badminton, and jogging along Victoria Harbour (during the good old undergrad years in Hong Kong).</p>
 						</div>
 						<div class="about-quote">
 							<div><i>"As is a tale, so is life: not how long it is, but how good it is, is what matters."</i></div>
@@ -85,13 +83,15 @@
 					</div>
 				</div>
 			</div>
-			<footer class="main-footer">
-				<div class="main-footer-warpper">
-					<span>&copy; 2016 Yi Sha, based on Materialize CSS, FlatIcon.com</span>
-				</div>
-			</footer>
+			<div id="footer"></div>
 		</div>
 	</div>
+	<script type="text/javascript" src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
+	<script> 
+		$(function(){
+		  $("#footer").load("../footer.html"); 
+		});
+	</script> 
 	<script type="text/javascript" src="../js/materialize.min.js"></script>
 	<script src="../js/about.js" type="text/javascript" charset="utf-8" async defer></script>
 </body>

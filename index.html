@@ -1,8 +1,8 @@
 <!DOCTYPE html>
 <html>
 <!-- 
- Yisha's Personal Website v2.0
- Date produced: 3 Oct 2016
+ Yisha's Personal Website v2.1
+ Date produced: 16 Nov 2018
 -->
 <head>
 	<title>Yi Sha | Home</title>
@@ -43,6 +43,7 @@
 				<ul id="nav-mobile" class="left hide-on-med-and-down">
 					<li><a id="select-nav" href="index.html">Home</a></li>
 					<li><a href="subpage/about.html">About</a></li>
+					<li><a href="subpage/pub.html">Publication</a></li>
 					<li><a href="subpage/cv.html">CV</a></li>
 					<!-- <li><a href="subpage/experiences.html">Technical Experiences</a></li>
 					<li><a href="subpage/others.html">Others</a></li> -->
@@ -68,18 +69,19 @@
 			<div class="index-intro">
 				<div class="row">
 					<div class="index-intro-text">
-						<span>Passionate learner and traveler. Interested in robotics, human-computer interaction, and all kinds of cool stuff. </span>
+						<span>Passionate learner and traveler.</span>
 					</div>
 				</div>
 			</div>
-			<footer class="main-footer">
-				<div class="main-footer-warpper">
-					<span>&copy; 2016 Yi Sha, based on Materialize CSS, FlatIconf.com</span>
-				</div>
-			</footer>
+			<div id="footer"></div>
 		</div>
 	</div>
 	<script type="text/javascript" src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
+	<script> 
+		$(function(){
+		  $("#footer").load("footer.html"); 
+		});
+	</script> 
 	<script type="text/javascript" src="js/materialize.min.js"></script>
 	<script src="js/new_main.js" type="text/javascript" charset="utf-8" async defer></script>
 </body>

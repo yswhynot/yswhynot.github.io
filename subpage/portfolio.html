@@ -1,8 +1,8 @@
 <!DOCTYPE html>
 <html>
 <!-- 
- Yisha's Personal Website v2.0
- Date produced: 3 Oct 2016
+ Yisha's Personal Website v2.1
+ Date produced: 16 Nov 2018
 -->
 <head>
 	<title>Yi Sha | Portfolio</title>
@@ -24,7 +24,6 @@
 		ga('create', 'UA-85989321-1', 'auto');
 		ga('send', 'pageview');
 	</script>
-	
 </head>
 
 <body>
@@ -42,10 +41,9 @@
 				<ul id="nav-mobile" class="left hide-on-med-and-down">
 					<li><a href="../index.html">Home</a></li>
 					<li><a href="about.html">About</a></li>
+					<li><a href="pub.html">Publication</a></li>
 					<li><a href="cv.html">CV</a></li>
-					<!-- <li><a href="experiences.html">Technical Experiences</a></li>
-					<li><a href="others.html">Others</a></li> -->
-					<li><a id="select-nav"  href="portfolio.html">Portfolio</a></li>
+					<li><a id="select-nav" href="portfolio.html">Portfolio</a></li>
 				</ul>
 			</div>
 		</nav>
@@ -139,7 +137,7 @@
 										<span>Apr. 2016 - May. 2016</span>
 									</div>
 									<div class="item-location">
-										<span>... Just for fun</span>
+										<span>Kubot Technology</span>
 									</div>
 								</div>
 							</div>
@@ -430,6 +428,27 @@
 									</div>
 								</div>
 							</div>
+							<div class="section-item item-even" onclick="location.href='projects/2018.html';">
+								<div class="item-show">
+									<div class="item-title">
+										<span>2017 - 2018</span>
+									</div>
+									<div class="item-desc">
+										<span>Year of Dog.</span>
+									</div>
+									<div class="item-img item-img-v">
+										<img src="http:////c1.staticflickr.com/5/4813/45900133912_eb55e8ce16_c.jpg">
+									</div>
+								</div>
+								<div class="item-hidden">
+									<div class="item-time">
+										<span></span>
+									</div>
+									<div class="item-location">
+										<span>At the age of 23.</span>
+									</div>
+								</div>
+							</div>
 						</div>
 					</div>
 				</div>
@@ -445,14 +464,15 @@
 					</div>
 				</div>
 			</div>
-			<footer class="main-footer">
-				<div class="main-footer-warpper">
-					<span>&copy; 2016 Yi Sha, based on Materialize CSS, FlatIcon.com</span>
-				</div>
-			</footer>
+			<div id="footer"></div>
 		</div>
 	</div>
 	<script type="text/javascript" src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
+	<script> 
+		$(function(){
+		  $("#footer").load("../footer.html"); 
+		});
+	</script> 
 	<script type="text/javascript" src="../js/materialize.min.js"></script>
 	<script src="../js/portfolio.js" type="text/javascript" charset="utf-8" async defer></script>
 </body>
