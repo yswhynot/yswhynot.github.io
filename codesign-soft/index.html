@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>My Project Title</title>
+  <!-- Bootstrap 5 CSS -->
+  <link href="https://cdn.jsdelivr.net/npm/bootswatch@5/dist/cyborg/bootstrap.min.css" rel="stylesheet"/>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <style>
+    body { background: #fafafa; color: #222; 
+    font-family: 'Inter', sans-serif;
+    }
+  h1{
+    font-family: 'Inter', sans-serif;
+    font-weight: 600;
+    color:#ffffff;
+  }
+  h2, h3, h4, h5, h6 {
+    font-family: 'Inter', sans-serif;
+    font-weight: 600;
+    color:#5a5a5a;
+  }
+    header.hero { position: relative; height: 30vh; overflow: hidden; }
+    header.hero img { width: 100%; height: 100%; object-fit: cover; }
+    header.hero .overlay { position: absolute; top: 0; left: 0; width: 100%; height: 100%; background: rgba(0, 0, 0, 0.5); }
+    header.hero .hero-content { position: absolute; bottom: 1rem; left: 50%; transform: translateX(-50%); text-align: center; color: #fff; }
+    .gallery .card { border: none; border-radius: .5rem; box-shadow: 0 2px 8px rgba(0,0,0,0.1); }
+    pre { background: #dcdcdc; color: #000000; padding: 1rem; border-radius: .25rem; overflow: auto; }
+  </style>
+</head>
+<body>
+  <!-- Hero -->
+  <header class="hero">
+    <img src="media/teaser.jpg" alt="Teaser">
+    <div class="overlay"></div>
+    <div class="hero-content">
+      <h1 class="display-6 fw-bold">Co-Design of Soft Gripper with Neural Physics</h1>
+    </div>
+  </header>
+
+  <!-- Main Content -->
+  <main class="container py-5">
+    <section class="mb-5">
+      <p class="lead text-center">
+        <a href="https://yswhynot.github.io/" class="text-primary text-decoration-none">Sha Yi </a> <sup>*</sup>
+        <span class="mx-4"></span>
+        <a href="https://hakuna25.github.io" class="text-primary text-decoration-none">Xueqian Bai</a><sup>*</sup>
+        <span class="mx-4"></span>
+        <a href="#" class="text-primary text-decoration-none">Adabhav Singh</a> <span class="mx-4"></span>
+        <a href="https://jianglongye.com/" class="text-primary text-decoration-none">Jianglong Ye</a> <span class="mx-4"></span>
+        <a href="https://tolley.eng.ucsd.edu/" class="text-primary text-decoration-none">Michael T Tolley</a> <span class="mx-4"></span>
+        <a href="https://xiaolonw.github.io/index.html" class="text-primary text-decoration-none">Xiaolong Wang</a>
+      </p>
+      <p class="lead text-center"> UC San Diego</p>
+    </section>
+    <section class="mb-5">
+      <div class="d-flex justify-content-center flex-wrap gap-2">
+        <a href="#" class="btn btn-primary rounded-pill">
+          <i class="bi bi-file-earmark-text-fill me-1"></i>arXiv
+        </a>
+        <a href="#" class="btn btn-dark rounded-pill">
+          <i class="bi bi-youtube me-1"></i>Video
+        </a>
+        <a href="#" class="btn btn-dark rounded-pill">
+          <i class="bi bi-github me-1"></i>Code
+        </a>
+      </div>
+    </section>
+    <section class="mb-5">
+      <h4 class="mb-3 text-center">Abstract</h4>
+      <div class="row justify-content-center">
+        <div class="col-12 col-md-10 col-lg-8">
+          <p class="w-75 mx-auto  mb-0" style="text-align: justify;">
+            For robot manipulation, both the controller and end-effector design are crucial. Soft grippers are generalizable by deforming to different geometries, but designing such a gripper and finding its grasp pose remains challenging. In this paper, we propose a co-design framework that generates an optimized soft gripper’s block-wise stiffness distribution and its grasping pose, using a neural physics model trained in simulation. We derived a uniform-pressure tendon model for a flexure-based soft finger, then generated a diverse dataset by randomizing both gripper pose and design parameters. A neural network is trained to approximate this forward simulation, yielding a fast, differentiable surrogate. We embed that surrogate in an end-to-end optimization loop to optimize the ideal stiffness configuration and best grasp pose. Finally, we 3D-print the optimized grippers of various stiffness by changing the structural parameters. We demonstrate that our co-designed grippers significantly outperform baseline designs in both simulation and hardware experiments.
+          </p>
+        </div>
+      </div> 
+    </section>
+
+    <section class="mb-5">
+      <h4 class="mb-4 text-center">Simulation Results</h4>
+    </section>
+  
+    <section class="mb-5">
+      <h4 class="mb-4 text-center">Hardware Results</h4>
+      <div class="row row-cols-1 row-cols-md-2 g-3 justify-content-center">
+        <div class="col">
+          <video controls muted autoplay loop playsinline preload="none"
+          class="w-100 lazy-video" style="aspect-ratio:16/9; object-fit:cover;">
+            <source src="media/exp_mustard.mp4" type="video/mp4">
+          </video>
+        </div>
+        <div class="col">
+          <video controls muted autoplay loop playsinline preload="none"
+          class="w-100 lazy-video" style="aspect-ratio:16/9; object-fit:cover;">
+            <source src="media/exp_spatula.mp4" type="video/mp4">
+          </video>
+        </div>
+        <div class="col">
+          <video controls muted autoplay loop playsinline preload="none"
+          class="w-100 lazy-video" style="aspect-ratio:16/9; object-fit:cover;">
+            <source src="media/exp_.mp4" type="video/mp4">
+          </video>
+      </div>
+    </section>
+
+    <!-- BibTeX -->
+    <section>
+      <div class="row justify-content-center">
+        <div class="col-12 col-md-10 col-lg-8">
+      <h5 class="mb-3 text-left">BibTeX</h5>
+      <pre><code>@inproceedings{yi2025codesign,
+      title     = {Co-Design of Soft Gripper with Neural Physics},
+      author    = {Yi, Sha and Bai, Xueqian and Singh, Adabhav and Ye, Jianglong and Tolley, Michael T and Wang, Xiaolong},
+}</code></pre>
+    </div>
+    </div>
+    </section>
+  </main>
+
+  <!-- Bootstrap JS (optional) -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
