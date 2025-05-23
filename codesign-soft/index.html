@@ -28,6 +28,25 @@
     header.hero .hero-content { position: absolute; bottom: 1rem; left: 50%; transform: translateX(-50%); text-align: center; color: #fff; }
     .gallery .card { border: none; border-radius: .5rem; box-shadow: 0 2px 8px rgba(0,0,0,0.1); }
     pre { background: #dcdcdc; color: #000000; padding: 1rem; border-radius: .25rem; overflow: auto; }
+    /* Scroll-snap video scroller */
+    .video-stack {
+      display: flex;
+      overflow-x: auto;
+      scroll-snap-type: x mandatory;
+      -webkit-overflow-scrolling: touch;
+      gap: 1rem;
+      padding: 1rem 0;
+    }
+    /* show native scrollbar */
+    /* .video-stack::-webkit-scrollbar { display: none; } */
+    .video-stack video {
+      scroll-snap-align: start;
+      flex: 0 0 auto;
+      height: 300px;
+      width: auto;
+      object-fit: cover;
+      background: linear-gradient(135deg,#f5f7fa,#c3cfe2);
+    }
   </style>
 </head>
 <body>
@@ -151,54 +170,96 @@
   
     <section class="mb-5">
       <h4 class="mb-4 text-center">Hardware Results</h4>
-      <div class="row row-cols-1 row-cols-md-2 g-3 justify-content-center">
-        <div class="col">
-          <video controls muted autoplay loop playsinline preload="none"
-          class="w-100 lazy-video" style="aspect-ratio:16/9; object-fit:cover;">
-            <source src="media/exp_mustard.webm" type="video/webm">
+      <p class="text-center">* All videos are 1.5x speed unless otherwise specified.</p>
+        <h5 class="mb-2 text-left">Rigid Gripper</h5>
+        <div class="video-container position-relative mb-5">
+        <div class="video-stack">
+          <video controls autoplay muted loop playsinline preload="none">
+            <source src="media/rigid_mustard.mp4" type="video/mp4">
+          </video>
+          <video controls autoplay muted loop playsinline preload="none">
+            <source src="media/rigid_spatula.mp4" type="video/mp4">
+          </video>
+          <video controls autoplay muted loop playsinline preload="none">
+            <source src="media/rigid_lightbunny.mp4" type="video/mp4">
+          </video>
+          <video controls autoplay muted loop playsinline preload="none">
+            <source src="media/rigid_watermelon.mp4" type="video/mp4">
+          </video>
+          <video controls autoplay muted loop playsinline preload="none">
+            <source src="media/rigid_heavybunny.mp4" type="video/mp4">
+          </video>
+          <video controls autoplay muted loop playsinline preload="none">
+            <source src="media/rigid_car.mp4" type="video/mp4">
+          </video>
+          <video controls autoplay muted loop playsinline preload="none">
+            <source src="media/rigid_spray.mp4" type="video/mp4">
+          </video>
+          <video controls autoplay muted loop playsinline preload="none">
+            <source src="media/rigid_egg.mp4" type="video/mp4">
           </video>
         </div>
-        <div class="col">
-          <video controls muted autoplay loop playsinline preload="none"
-          class="w-100 lazy-video" style="aspect-ratio:16/9; object-fit:cover;">
-            <source src="media/exp_spatula.webm" type="video/webm">
+        <input type="range" class="video-scroll form-range" min="0" max="100" value="0">
+        </div>
+        <h5 class="mb-2 text-left">Soft Gripper</h5>
+        <div class="video-container position-relative mb-5">
+        <div class="video-stack">
+          <video controls autoplay muted loop playsinline preload="none">
+            <source src="media/soft_mustard.mp4" type="video/mp4">
+          </video>
+          <video controls autoplay muted loop playsinline preload="none">
+            <source src="media/soft_spatula.mp4" type="video/mp4">
+          </video>
+          <video controls autoplay muted loop playsinline preload="none">
+            <source src="media/soft_lightbunny.mp4" type="video/mp4">
+          </video>
+          <video controls autoplay muted loop playsinline preload="none">
+            <source src="media/soft_watermelon.mp4" type="video/mp4">
+          </video>
+          <video controls autoplay muted loop playsinline preload="none">
+            <source src="media/soft_heavybunny.mp4" type="video/mp4">
+          </video>
+          <video controls autoplay muted loop playsinline preload="none">
+            <source src="media/soft_car.mp4" type="video/mp4">
+          </video>
+          <video controls autoplay muted loop playsinline preload="none">
+            <source src="media/soft_spray.mp4" type="video/mp4">
+          </video>
+          <video controls autoplay muted loop playsinline preload="none">
+            <source src="media/soft_egg.mp4" type="video/mp4">
           </video>
         </div>
-        <div class="col">
-          <video controls muted autoplay loop playsinline preload="none"
-          class="w-100 lazy-video" style="aspect-ratio:16/9; object-fit:cover;">
-            <source src="media/exp_lightbunny.webm" type="video/webm">
+        <input type="range" class="video-scroll form-range" min="0" max="100" value="0">
+        </div>
+        <h5 class="mb-2 text-left"><i class="bi bi-star-fill"></i> Optimized Gripper </h5>
+        <div class="video-container position-relative mb-5">
+        <div class="video-stack">
+          <video controls autoplay muted loop playsinline preload="none">
+            <source src="media/opt_mustard.mp4" type="video/mp4">
           </video>
-      </div>
-        <div class="col">
-          <video controls muted autoplay loop playsinline preload="none"
-          class="w-100 lazy-video" style="aspect-ratio:16/9; object-fit:cover;">
-            <source src="media/exp_watermelon.webm" type="video/webm">
+          <video controls autoplay muted loop playsinline preload="none">
+            <source src="media/opt_spatula.mp4" type="video/mp4">
+          </video>
+          <video controls autoplay muted loop playsinline preload="none">
+            <source src="media/opt_lightbunny.mp4" type="video/mp4">
+          </video>
+          <video controls autoplay muted loop playsinline preload="none">
+            <source src="media/opt_watermelon.mp4" type="video/mp4">
+          </video>
+          <video controls autoplay muted loop playsinline preload="none">
+            <source src="media/opt_heavybunny.mp4" type="video/mp4">
+          </video>
+          <video controls autoplay muted loop playsinline preload="none">
+            <source src="media/opt_car.mp4" type="video/mp4">
+          </video>
+          <video controls autoplay muted loop playsinline preload="none">
+            <source src="media/opt_spray.mp4" type="video/mp4">
+          </video>
+          <video controls autoplay muted loop playsinline preload="none">
+            <source src="media/opt_egg.mp4" type="video/mp4">
           </video>
         </div>
-        <div class="col">
-          <video controls muted autoplay loop playsinline preload="none"
-          class="w-100 lazy-video" style="aspect-ratio:16/9; object-fit:cover;">
-            <source src="media/exp_heavybunny.webm" type="video/webm">
-          </video>
-        </div>
-        <div class="col">
-          <video controls muted autoplay loop playsinline preload="none"
-          class="w-100 lazy-video" style="aspect-ratio:16/9; object-fit:cover;">
-            <source src="media/exp_car.webm" type="video/webm">
-          </video>
-        </div>
-        <div class="col">
-          <video controls muted autoplay loop playsinline preload="none"
-          class="w-100 lazy-video" style="aspect-ratio:16/9; object-fit:cover;">
-            <source src="media/exp_spray.webm" type="video/webm">
-          </video>
-        </div>
-        <div class="col">
-          <video controls muted autoplay loop playsinline preload="none"
-          class="w-100 lazy-video" style="aspect-ratio:16/9; object-fit:cover;">
-            <source src="media/exp_egg.webm" type="video/webm">
-          </video>
+        <input type="range" class="video-scroll form-range" min="0" max="100" value="0">
         </div>
     </section>
 
@@ -218,5 +279,21 @@
 
   <!-- Bootstrap JS (optional) -->
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+  <script>
+  document.querySelectorAll('.video-container').forEach(container => {
+  const stack  = container.querySelector('.video-stack');
+  const slider = container.querySelector('.video-scroll');
+  // update scroll on slider input
+  slider.addEventListener('input', () => {
+    const maxScroll = stack.scrollWidth - stack.clientWidth;
+    stack.scrollLeft = (slider.value / 100) * maxScroll;
+  });
+  // update slider on manual scroll
+  stack.addEventListener('scroll', () => {
+    const maxScroll = stack.scrollWidth - stack.clientWidth;
+    slider.value = maxScroll ? (stack.scrollLeft / maxScroll) * 100 : 0;
+  });
+});
+  </script>
 </body>
 </html>
