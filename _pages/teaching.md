@@ -1,9 +1,9 @@
 ---
 layout: page
 permalink: /teaching/
-title: Teaching
+title: Teaching & Misc
 nav: true
-nav_order: 3
+nav_order: 4
 ---
 
 ### TA at Carnegie Mellon University
@@ -15,3 +15,7 @@ nav_order: 3
 
 - UCSD MAE249: Soft Robotics (Fall 2024, Fall 2025)
 - CMU 16-845: Insects and Robots (Fall 2023)
+
+### Misc
+- I initially majored in Biology in undergrad before switching my major.
+- I don't like twitter/X, but I use it occasionally: [@yswhynot](https://x.com/yswhynot)
