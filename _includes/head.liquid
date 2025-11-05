@@ -187,3 +187,30 @@
 {% if page.tikzjax %}
   <link defer rel="stylesheet" type="text/css" href="https://tikzjax.com/v1/fonts.css">
 {% endif %}
+
+<style>
+  /* Container for the profile image */
+  .profile-image-container {
+    position: relative;
+    cursor: pointer;
+  }
+
+  /* The "hover" image that sits on top */
+  .profile-hover-image {
+    position: absolute;
+    top: 0;
+    left: 0;
+    opacity: 0; /* Start invisible */
+    transition: opacity 0.3s ease-in-out; /* This creates the fade effect */
+  }
+
+  /* On hover, fade in the top image */
+  .profile-image-container:hover .profile-hover-image {
+    opacity: 1;
+  }
+  
+  /* When the 'locked' class is added by JS, keep the top image faded in */
+  .profile-image-container.locked .profile-hover-image {
+    opacity: 1;
+  }
+</style>

@@ -76,6 +76,32 @@
 
 
 
+<style>
+  /* Container for the profile image */
+  .profile-image-container {
+    position: relative;
+    cursor: pointer;
+  }
+
+  /* The "hover" image that sits on top */
+  .profile-hover-image {
+    position: absolute;
+    top: 0;
+    left: 0;
+    opacity: 0; /* Start invisible */
+    transition: opacity 0.3s ease-in-out; /* This creates the fade effect */
+  }
+
+  /* On hover, fade in the top image */
+  .profile-image-container:hover .profile-hover-image {
+    opacity: 1;
+  }
+  
+  /* When the 'locked' class is added by JS, keep the top image faded in */
+  .profile-image-container.locked .profile-hover-image {
+    opacity: 1;
+  }
+</style>
   </head>
 
   <!-- Body -->
@@ -135,23 +161,12 @@
             
           
             
-              
-                
-                <li class="nav-item active">
-                  <a class="nav-link" href="/">About
-                    
-                      <span class="sr-only">(current)</span>
-                    
-                  </a>
-                </li>
-              
-            
           
             
               
                 
                 <li class="nav-item ">
-                  <a class="nav-link" href="/publications/">publications
+                  <a class="nav-link" href="/publications/">Publications
                     
                   </a>
                 </li>
@@ -173,7 +188,7 @@
               
                 
                 <li class="nav-item ">
-                  <a class="nav-link" href="/cv/">cv
+                  <a class="nav-link" href="/cv/">CV
                     
                   </a>
                 </li>
@@ -228,42 +243,35 @@
 
   <article>
     
-      <div class="profile float-right">
-        
-          
-          
-          
-          
-
-
-
-<figure>
-  <picture>
-    <!-- Auto scaling with imagemagick -->
-    <!--
-      See https://www.debugbear.com/blog/responsive-images#w-descriptors-and-the-sizes-attribute and
-      https://developer.mozilla.org/en-US/docs/Learn/HTML/Multimedia_and_embedding/Responsive_images for info on defining 'sizes' for responsive images
-    -->
-    
+    <div class="profile float-right">
       
-        <source class="responsive-img-srcset" srcset="/assets/img/headshot_small-480.webp 480w,/assets/img/headshot_small-800.webp 800w,/assets/img/headshot_small-1400.webp 1400w," type="image/webp" sizes="(min-width: 930px) 270.0px, (min-width: 576px)
-      30vw, 95vw">
-      
-    
-    <img src="/assets/img/headshot_small.jpg?46eeb6381b64944717e8bfb548204d7e" class="img-fluid z-depth-1
-      rounded" width="100%" height="auto" alt="headshot_small.jpg" loading="eager" onerror="this.onerror=null; $('.responsive-img-srcset').remove();">
-  </source></picture>
-
+          
+          <script>
+            function toggleProfileImageLock(container) {
+              container.classList.toggle('locked');
+            }
+          </script><div class="profile-image-container" onclick="toggleProfileImageLock(this)">
+            
+            <!-- The Base Image (Bottom) -->
+            <img class="img-fluid z-depth-1 rounded" src="/assets/img/headshot_small.jpeg" alt="headshot_small.jpeg">
+            
+            <!-- The Hover Image (Top) -->
+            <img class="img-fluid z-depth-1 rounded profile-hover-image" src="/assets/img/stand_w_robot.jpeg" alt="stand_w_robot.jpeg">
+          </div>
   
-</figure>
-
         
-        
-      </div>
-    
+  
+      
+        <div class="more-info">
+<div class="social"> <div class="contact-icons"> <p> <a href="https://github.com/yswhynot" title="GitHub" rel="external nofollow noopener" target="_blank"><i class="fa-brands fa-github"></i></a>  <a href="https://scholar.google.com/citations?user=U7KS9BwAAAAJ&amp;hl=en" title="Google Scholar" rel="external nofollow noopener" target="_blank"><i class="ai ai-google-scholar"></i></a>  <a href="https://www.linkedin.com/in/sha-yi-128031a8/" title="LinkedIn" rel="external nofollow noopener" target="_blank"><i class="fa-brands fa-linkedin"></i></a> </p> </div>
+</div>
+</div>
+      
+    </div>
+  
 
     <div class="clearfix">
-<p>[Yisha]   [伊 莎]    <a href="https://yswhynot.github.io" rel="external nofollow noopener" target="_blank">shayi@ucsd.edu</a></p>
+<p>[Yisha]   [伊 莎]    <a href="">shayi@ucsd.edu</a></p>
 
 <p>My research interest centers on using machine learning to design and control novel robotic systems.</p>
 
@@ -282,25 +290,6 @@
 
     <!-- Social -->
     
-      <div class="social">
-        <div class="contact-icons">
-  
-      <a href="https://github.com/yswhynot" title="GitHub" rel="external nofollow noopener" target="_blank"><i class="fa-brands fa-github"></i></a>
-    
-
-  
-      <a href="https://www.linkedin.com/in/sha-yi-128031a8" title="LinkedIn" rel="external nofollow noopener" target="_blank"><i class="fa-brands fa-linkedin"></i></a>
-    
-
-  
-      <a href="https://scholar.google.com/citations?user=U7KS9BwAAAAJ" title="Google Scholar" rel="external nofollow noopener" target="_blank"><i class="ai ai-google-scholar"></i></a>
-    
-
-</div>
-
-        <div class="contact-note"></div>
-      </div>
-    
 
 
     <!-- News -->
@@ -312,14 +301,14 @@
     <!-- Selected papers -->
     
       <h2>
-        <a href="/publications/" style="color: inherit">selected publications</a>
+        <a href="/publications/" style="color: inherit">Selected Publications</a>
       </h2>
       <div class="publications">
   <ol class="bibliography">
 <li>
 <div class="row">
   
-    <div class="col col-sm-2 abbr">
+    <div class="col col-sm-3 abbr">
       
         
           <!-- Internal File -->
@@ -328,7 +317,130 @@
           
             
 
-<figure class="preview z-depth-1 rounded" style="max-width: 200px; margin: 0 auto 1rem;">
+
+
+<figure>
+  <picture>
+    <!-- Auto scaling with imagemagick -->
+    <!--
+      See https://www.debugbear.com/blog/responsive-images#w-descriptors-and-the-sizes-attribute and
+      https://developer.mozilla.org/en-US/docs/Learn/HTML/Multimedia_and_embedding/Responsive_images for info on defining 'sizes' for responsive images
+    -->
+    
+      
+    
+    <img src="/assets/img/publication_preview/reward_icra2026.jpg" class="preview rounded" width="100%" height="auto" alt="reward_icra2026.jpg" data-zoomable loading="eager" onerror="this.onerror=null; $('.responsive-img-srcset').remove();">
+  </picture>
+
+  
+</figure>
+
+          
+        
+       
+    </div>
+  
+
+  <!-- Entry bib key -->
+  <div id="bai2025learning" class="col-sm-8">
+    <!-- Title -->
+    <div class="title">Learning to Design Soft Hands using Reward Models</div>
+    <!-- Author -->
+    <div class="author">
+      
+
+      
+      Xueqian
+            Bai, Nick
+            Hansen, Adabhav
+            Singh, Michael T
+            Tolley, Yan
+            Duan, Pieter
+            Abbeel, Xiaolong
+            Wang, and <em>Sha
+            Yi</em>
+      
+    </div>
+
+    <!-- Journal/Book title and date -->
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    <div class="periodical">
+      <em>In under review</em>,  2025
+    </div>
+    <div class="periodical">
+      
+    </div>
+
+    <!-- Links/Buttons -->
+    <div class="links">
+      
+      
+      
+      
+      
+      
+      
+        
+          <a href="https://arxiv.org/abs/2510.17086" class="btn btn-sm z-depth-0" role="button" rel="external nofollow noopener" target="_blank">PDF</a>
+        
+      
+      
+      
+      
+      
+      
+      
+      
+        <a href="https://hakuna25.github.io/softhand/" class="btn btn-sm z-depth-0" role="button" rel="external nofollow noopener" target="_blank">Website</a>
+      
+    </div>
+    
+      
+      
+
+      
+      
+
+      
+      
+
+      
+      
+      
+    
+
+    
+
+    
+
+    
+
+    
+  </div>
+</div>
+</li>
+<li>
+<div class="row">
+  
+    <div class="col col-sm-3 abbr">
+      
+        
+          <!-- Internal File -->
+          
+      
+          
+            
+
+<figure class="preview rounded">
   
     <video src="/assets/img/publication_preview/codesign.webm" width="100%" height="auto" style="border-radius: 0.25rem;" autoplay loop muted></video>
   
@@ -430,7 +542,7 @@
 <li>
 <div class="row">
   
-    <div class="col col-sm-2 abbr">
+    <div class="col col-sm-3 abbr">
       
         
           <!-- Internal File -->
@@ -439,7 +551,7 @@
           
             
 
-<figure class="preview z-depth-1 rounded" style="max-width: 200px; margin: 0 auto 1rem;">
+<figure class="preview rounded">
   
     <video src="/assets/img/publication_preview/auro.webm" width="100%" height="auto" style="border-radius: 0.25rem;" autoplay loop muted></video>
   
@@ -537,7 +649,7 @@
 <li>
 <div class="row">
   
-    <div class="col col-sm-2 abbr">
+    <div class="col col-sm-3 abbr">
       
         
           <!-- Internal File -->
@@ -558,7 +670,7 @@
     
       
     
-    <img src="/assets/img/publication_preview/corl2024.gif" class="preview z-depth-1 rounded" width="100%" height="auto" alt="corl2024.gif" data-zoomable loading="eager" onerror="this.onerror=null; $('.responsive-img-srcset').remove();">
+    <img src="/assets/img/publication_preview/corl2024.gif" class="preview rounded" width="100%" height="auto" alt="corl2024.gif" data-zoomable loading="eager" onerror="this.onerror=null; $('.responsive-img-srcset').remove();">
   </picture>
 
   
@@ -665,7 +777,7 @@
 <li>
 <div class="row">
   
-    <div class="col col-sm-2 abbr">
+    <div class="col col-sm-3 abbr">
       
         
           <!-- Internal File -->
@@ -686,7 +798,7 @@
     
       
     
-    <img src="/assets/img/publication_preview/james_video_15x.gif" class="preview z-depth-1 rounded" width="100%" height="auto" alt="james_video_15x.gif" data-zoomable loading="eager" onerror="this.onerror=null; $('.responsive-img-srcset').remove();">
+    <img src="/assets/img/publication_preview/james_video_15x.gif" class="preview rounded" width="100%" height="auto" alt="james_video_15x.gif" data-zoomable loading="eager" onerror="this.onerror=null; $('.responsive-img-srcset').remove();">
   </picture>
 
   
@@ -777,7 +889,7 @@
 <li>
 <div class="row">
   
-    <div class="col col-sm-2 abbr">
+    <div class="col col-sm-3 abbr">
       
         
           <!-- Internal File -->
@@ -798,7 +910,7 @@
     
       
     
-    <img src="/assets/img/publication_preview/RSS2023_snap.gif" class="preview z-depth-1 rounded" width="100%" height="auto" alt="RSS2023_snap.gif" data-zoomable loading="eager" onerror="this.onerror=null; $('.responsive-img-srcset').remove();">
+    <img src="/assets/img/publication_preview/RSS2023_snap.gif" class="preview rounded" width="100%" height="auto" alt="RSS2023_snap.gif" data-zoomable loading="eager" onerror="this.onerror=null; $('.responsive-img-srcset').remove();">
   </picture>
 
   
@@ -897,7 +1009,7 @@
 <li>
 <div class="row">
   
-    <div class="col col-sm-2 abbr">
+    <div class="col col-sm-3 abbr">
       
         
           <!-- Internal File -->
@@ -918,7 +1030,7 @@
     
       
     
-    <img src="/assets/img/publication_preview/form_mesh.gif" class="preview z-depth-1 rounded" width="100%" height="auto" alt="form_mesh.gif" data-zoomable loading="eager" onerror="this.onerror=null; $('.responsive-img-srcset').remove();">
+    <img src="/assets/img/publication_preview/form_mesh.gif" class="preview rounded" width="100%" height="auto" alt="form_mesh.gif" data-zoomable loading="eager" onerror="this.onerror=null; $('.responsive-img-srcset').remove();">
   </picture>
 
   
@@ -1021,7 +1133,7 @@
 <li>
 <div class="row">
   
-    <div class="col col-sm-2 abbr">
+    <div class="col col-sm-3 abbr">
       
         
           <!-- Internal File -->
@@ -1042,7 +1154,7 @@
     
       
     
-    <img src="/assets/img/publication_preview/puzbot_gotogoal.gif" class="preview z-depth-1 rounded" width="100%" height="auto" alt="puzbot_gotogoal.gif" data-zoomable loading="eager" onerror="this.onerror=null; $('.responsive-img-srcset').remove();">
+    <img src="/assets/img/publication_preview/puzbot_gotogoal.gif" class="preview rounded" width="100%" height="auto" alt="puzbot_gotogoal.gif" data-zoomable loading="eager" onerror="this.onerror=null; $('.responsive-img-srcset').remove();">
   </picture>
 
   

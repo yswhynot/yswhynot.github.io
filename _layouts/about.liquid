@@ -16,27 +16,76 @@ layout: default
 
   <article>
     {% if page.profile %}
-      <div class="profile float-{% if page.profile.align == 'left' %}left{% else %}right{% endif %}">
-        {% if page.profile.image %}
+    <div class="profile float-{% if page.profile.align == 'left' %}left{% else %}right{% endif %}">
+      {% if page.profile.image %}
+  
+        {%- comment -%}----- START OF NEW LOGIC ---- {%- endcomment -%}
+  
+        {%- comment -%} Only do the hover/click if image_alt is defined {%- endcomment -%}
+        {% if page.profile.image_alt %}
+  
+          {%- comment -%} 1. Get all the image paths and classes {%- endcomment -%}
+          {% assign profile_image_path = page.profile.image | prepend: 'assets/img/' | relative_url %}
+          {% assign profile_image_alt_path = page.profile.image_alt | prepend: 'assets/img/' | relative_url %}
+          {% if page.profile.image_circular %}
+            {% assign profile_image_class = 'img-fluid z-depth-1 rounded-circle' %}
+          {% else %}
+            {% assign profile_image_class = 'img-fluid z-depth-1 rounded' %}
+          {% endif %}
+  
+          {%- comment -%} 2. Add the JavaScript for the 'click-to-lock' {%- endcomment -%}
+          <script>
+            function toggleProfileImageLock(container) {
+              container.classList.toggle('locked');
+            }
+          </script>
+  
+          {%- comment -%} 3. Create the two-image stack {%- endcomment -%}
+          <div class="profile-image-container" onclick="toggleProfileImageLock(this)">
+            
+            <!-- The Base Image (Bottom) -->
+            <img
+              class="{{ profile_image_class }}"
+              src="{{ profile_image_path }}"
+              alt="{{ page.profile.image }}"
+            >
+            
+            <!-- The Hover Image (Top) -->
+            <img
+              class="{{ profile_image_class }} profile-hover-image"
+              src="{{ profile_image_alt_path }}"
+              alt="{{ page.profile.image_alt }}"
+            >
+          </div>
+  
+        {% else %}
+  
+          {%- comment -%}
+            This is the ORIGINAL code.
+            If no image_alt is set, just show the static profile picture.
+          {%- endcomment -%}
           {% assign profile_image_path = page.profile.image | prepend: 'assets/img/' %}
           {% if page.profile.image_circular %}
             {% assign profile_image_class = 'img-fluid z-depth-1 rounded-circle' %}
           {% else %}
-            {% assign profile_image_class = 'img-fluid z-depth-1
-      rounded' %}
+            {% assign profile_image_class = 'img-fluid z-depth-1 rounded' %}
           {% endif %}
-          {% capture sizes %}(min-width: {{ site.max_width }}) {{ site.max_width | minus: 30 | times: 0.3}}px, (min-width: 576px)
-      30vw, 95vw"{% endcapture %}
+          {% capture sizes %}(min-width: {{ site.max_width }}) {{ site.max_width | minus: 30 | times: 0.3}}px, (min-width: 576px) 30vw, 95vw"{% endcapture %}
           {%
             include figure.liquid loading="eager" path=profile_image_path class=profile_image_class sizes=sizes alt=page.profile.image
             cache_bust=true
           %}
+  
         {% endif %}
-        {% if page.profile.more_info %}
-          <div class="more-info">{{ page.profile.more_info }}</div>
-        {% endif %}
-      </div>
-    {% endif %}
+        {%- comment -%}----- END OF NEW LOGIC ----- {%- endcomment -%}
+  
+      {% endif %}
+  
+      {% if page.profile.more_info %}
+        <div class="more-info">{{ page.profile.more_info }}</div>
+      {% endif %}
+    </div>
+  {% endif %}
 
     <div class="clearfix">{{ content }}</div>
 
@@ -69,7 +118,7 @@ layout: default
     <!-- Selected papers -->
     {% if page.selected_papers %}
       <h2>
-        <a href="{{ '/publications/' | relative_url }}" style="color: inherit">selected publications</a>
+        <a href="{{ '/publications/' | relative_url }}" style="color: inherit">Selected Publications</a>
       </h2>
       {% include selected_papers.liquid %}
     {% endif %}

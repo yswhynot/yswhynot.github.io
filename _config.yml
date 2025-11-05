@@ -22,7 +22,7 @@ back_to_top: true
 # Theme
 # -----------------------------------------------------------------------------
 
-repo_theme_light: shadow_blue
+repo_theme_light: solarized-light 
 repo_theme_dark: onedark
 repo_trophies:
   enabled: true

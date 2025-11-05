@@ -81,6 +81,32 @@
 
 
 
+<style>
+  /* Container for the profile image */
+  .profile-image-container {
+    position: relative;
+    cursor: pointer;
+  }
+
+  /* The "hover" image that sits on top */
+  .profile-hover-image {
+    position: absolute;
+    top: 0;
+    left: 0;
+    opacity: 0; /* Start invisible */
+    transition: opacity 0.3s ease-in-out; /* This creates the fade effect */
+  }
+
+  /* On hover, fade in the top image */
+  .profile-image-container:hover .profile-hover-image {
+    opacity: 1;
+  }
+  
+  /* When the 'locked' class is added by JS, keep the top image faded in */
+  .profile-image-container.locked .profile-hover-image {
+    opacity: 1;
+  }
+</style>
   </head>
 
   <!-- Body -->
@@ -142,23 +168,12 @@
             
           
             
-              
-                
-                <li class="nav-item active">
-                  <a class="nav-link" href="/">About
-                    
-                      <span class="sr-only">(current)</span>
-                    
-                  </a>
-                </li>
-              
-            
           
             
               
                 
                 <li class="nav-item ">
-                  <a class="nav-link" href="/publications/">publications
+                  <a class="nav-link" href="/publications/">Publications
                     
                   </a>
                 </li>
@@ -180,7 +195,7 @@
               
                 
                 <li class="nav-item ">
-                  <a class="nav-link" href="/cv/">cv
+                  <a class="nav-link" href="/cv/">CV
                     
                   </a>
                 </li>

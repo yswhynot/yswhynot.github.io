@@ -2,7 +2,6 @@
 layout: page
 permalink: /teaching/
 title: Teaching
-description: Teaching experience.
 nav: true
 nav_order: 3
 ---
@@ -11,3 +10,8 @@ nav_order: 3
 
 -   16-811 Math Fundamentals for Robotics
 -   16-711 Kinematics, Dynamics, and Control
+
+### Guest Lectures
+
+- UCSD MAE249: Soft Robotics (Fall 2024, Fall 2025)
+- CMU 16-845: Insects and Robots (Fall 2023)

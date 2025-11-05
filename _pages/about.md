@@ -3,16 +3,22 @@ layout: about
 title: About
 permalink: /
 description: Yi Sha's personal website.
-nav: true
+nav: false
 nav_order: 1
 
 # This is the front matter for the 'About' page
 profile:
-  # NOTE: You must move your image to this path
-  image: headshot_small.jpg 
-  address: >
-    UC San Diego
-
+  align: right 
+  image: headshot_small.jpeg 
+  image_alt: stand_w_robot.jpeg
+  more_info: >
+    <div class="social">
+    <div class="contact-icons">
+    <p> <a href="https://github.com/yswhynot" title="GitHub"><i class="fa-brands fa-github"></i></a> 
+    <a href="https://scholar.google.com/citations?user=U7KS9BwAAAAJ&hl=en" title="Google Scholar"><i class="ai ai-google-scholar"></i></a> 
+    <a href="https://www.linkedin.com/in/sha-yi-128031a8/" title="LinkedIn"><i class="fa-brands fa-linkedin"></i></a>
+    </p>
+    </div></div>
 # Enable the 'Selected Publications' section on this page
 selected_papers: true
 
@@ -20,9 +26,9 @@ selected_papers: true
 news: true
 
 # Enable the 'Social' icons on this page
-social: true
+social: false
 ---
-\[Yisha\]   \[伊 莎\]    [shayi@ucsd.edu](https://yswhynot.github.io)
+\[Yisha\]   \[伊 莎\]    [shayi@ucsd.edu]()
 
 My research interest centers on using machine learning to design and control novel robotic systems.
 

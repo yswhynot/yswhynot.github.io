@@ -22,7 +22,7 @@
   
 </title>
 <meta name="author" content="Sha Yi">
-<meta name="description" content="Teaching experience.">
+<meta name="description" content="">
 
   <meta name="keywords" content="robotics">
 
@@ -78,6 +78,32 @@
 
 
 
+<style>
+  /* Container for the profile image */
+  .profile-image-container {
+    position: relative;
+    cursor: pointer;
+  }
+
+  /* The "hover" image that sits on top */
+  .profile-hover-image {
+    position: absolute;
+    top: 0;
+    left: 0;
+    opacity: 0; /* Start invisible */
+    transition: opacity 0.3s ease-in-out; /* This creates the fade effect */
+  }
+
+  /* On hover, fade in the top image */
+  .profile-image-container:hover .profile-hover-image {
+    opacity: 1;
+  }
+  
+  /* When the 'locked' class is added by JS, keep the top image faded in */
+  .profile-image-container.locked .profile-hover-image {
+    opacity: 1;
+  }
+</style>
   </head>
 
   <!-- Body -->
@@ -141,23 +167,12 @@
             
           
             
-              
-                
-                <li class="nav-item active">
-                  <a class="nav-link" href="/">About
-                    
-                      <span class="sr-only">(current)</span>
-                    
-                  </a>
-                </li>
-              
-            
           
             
               
                 
                 <li class="nav-item ">
-                  <a class="nav-link" href="/publications/">publications
+                  <a class="nav-link" href="/publications/">Publications
                     
                   </a>
                 </li>
@@ -181,7 +196,7 @@
               
                 
                 <li class="nav-item ">
-                  <a class="nav-link" href="/cv/">cv
+                  <a class="nav-link" href="/cv/">CV
                     
                   </a>
                 </li>
@@ -229,7 +244,7 @@
 <div class="post">
   <header class="post-header">
     <h1 class="post-title">Teaching</h1>
-    <p class="post-description">Teaching experience.</p>
+    <p class="post-description"></p>
   </header>
 
   <article>
@@ -238,6 +253,13 @@
 <ul>
   <li>16-811 Math Fundamentals for Robotics</li>
   <li>16-711 Kinematics, Dynamics, and Control</li>
+</ul>
+
+<h3 id="guest-lectures">Guest Lectures</h3>
+
+<ul>
+  <li>UCSD MAE249: Soft Robotics (Fall 2024, Fall 2025)</li>
+  <li>CMU 16-845: Insects and Robots (Fall 2023)</li>
 </ul>
 
   </article>
