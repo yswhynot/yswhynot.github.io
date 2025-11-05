@@ -1,0 +1,424 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Co-Design of Soft Gripper with Neural Physics</title>
+  <!-- Bootstrap 5 CSS -->
+  <link href="https://cdn.jsdelivr.net/npm/bootswatch@5/dist/cyborg/bootstrap.min.css" rel="stylesheet"/>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <style>
+    body { background: #fafafa; color: #222; 
+    font-family: 'Inter', sans-serif;
+    }
+  h1{
+    font-family: 'Inter', sans-serif;
+    font-weight: 600;
+    color:#ffffff;
+  }
+  h2, h3, h4, h5, h6 {
+    font-family: 'Inter', sans-serif;
+    font-weight: 600;
+    color:#5a5a5a;
+  }
+    header.hero { position: relative; height: 30vh; overflow: hidden; }
+    header.hero img { width: 100%; height: 100%; object-fit: cover; }
+    header.hero .overlay { position: absolute; top: 0; left: 0; width: 100%; height: 100%; background: rgba(0, 0, 0, 0.5); }
+    header.hero .hero-content { position: absolute; bottom: 1rem; left: 50%; transform: translateX(-50%); text-align: center; color: #fff; }
+    .gallery .card { border: none; border-radius: .5rem; box-shadow: 0 2px 8px rgba(0,0,0,0.1); }
+    pre { background: #dcdcdc; color: #000000; padding: 1rem; border-radius: .25rem; overflow: auto; }
+    .video-container { margin: 0 auto 2rem; max-width: 1200px; padding: 0 2rem; }
+    .video-container h5 { font-weight: 600; margin-bottom: 1rem; }
+    .bg-col1{ background-color: #e3f2fd; }
+    .bg-col2{ background-color: #e8f5e9; }
+    .bg-col3{ background-color: #fff8e1; }
+    .video-stack { display: flex; overflow-x: auto; scroll-snap-type: x mandatory; -webkit-overflow-scrolling: touch; gap: 1rem; padding: 1rem 0; }
+    .video-stack video { scroll-snap-align: start; flex: 0 0 auto; height: 300px; width: auto; object-fit: cover; }
+    .video-column video {
+      width: 100%;
+      height: auto;          /* let height adjust */
+      max-height: 300px;     /* cap at 300px tall */
+      object-fit: contain;   /* preserve entire frame */
+    }
+    section { padding: 0 1rem; }
+  </style>
+</head>
+<body>
+  <!-- Hero -->
+  <header class="hero">
+    <img src="media/teaser.jpg" alt="Teaser">
+    <div class="overlay"></div>
+    <div class="hero-content">
+      <h1 class="display-6 fw-bold">Co-Design of Soft Gripper with Neural Physics</h1>
+    </div>
+  </header>
+
+  <!-- Main Content -->
+  <main class="container py-5">
+    <section class="mb-5">
+      <p class="lead text-center">
+        <a href="https://yswhynot.github.io/" class="text-primary text-decoration-none">Sha Yi </a> <sup>*</sup>
+        <span class="mx-4"></span>
+        <a href="https://hakuna25.github.io" class="text-primary text-decoration-none">Xueqian Bai</a><sup>*</sup>
+        <span class="mx-4"></span>
+        <a href="https://www.linkedin.com/in/adabhav/" class="text-primary text-decoration-none">Adabhav Singh</a> <span class="mx-4"></span>
+        <a href="https://jianglongye.com/" class="text-primary text-decoration-none">Jianglong Ye</a> <span class="mx-4"></span>
+        <a href="https://tolley.eng.ucsd.edu/" class="text-primary text-decoration-none">Michael T Tolley</a> <span class="mx-4"></span>
+        <a href="https://xiaolonw.github.io/index.html" class="text-primary text-decoration-none">Xiaolong Wang</a>
+      </p>
+      <p class="lead text-center"> UC San Diego</p>
+    </section>
+    <section class="mb-5">
+      <div class="d-flex justify-content-center flex-wrap gap-2">
+        <a href="https://arxiv.org/abs/2505.20404" class="btn btn-primary rounded-pill">
+          <i class="bi bi-file-earmark-text-fill me-1"></i>Paper
+        </a>
+        <a href="https://github.com/yswhynot/codesign-soft-gripper/tree/main/hardware" class="btn btn-primary rounded-pill">
+          <i class="bi bi-boxes me-1"></i>Hardware
+        </a>
+        <a href="https://github.com/yswhynot/codesign-soft-gripper" class="btn btn-primary rounded-pill">
+          <i class="bi bi-github me-1"></i>Code
+        </a>
+      </div>
+    </section>
+
+    <section class="mb-5">
+      <div class="row justify-content-center">
+        <div class="col-12 col-md-10 col-lg-10">
+          <div class="col-12 text-center">
+            <video controls muted autoplay loop playsinline preload="metadata" class="w-100 lazy-video" style="aspect-ratio:16/9; object-fit:cover;">
+              <source data-src="media/teaser.webm" type="video/webm">
+            </video>
+          </div>
+        </div>
+    </section>
+
+    <section class="mb-5">
+      <h4 class="mb-3 text-center">Abstract</h4>
+      <div class="row justify-content-center">
+        <div class="col-12 col-md-10 col-lg-8">
+          <p class="w-75 mx-auto  mb-0" style="text-align: justify;">
+            For robot manipulation, both the controller and end-effector design are crucial. Soft grippers are generalizable by deforming to different geometries, but designing such a gripper and finding its grasp pose remains challenging. In this paper, we propose a co-design framework that generates an optimized soft gripper's block-wise stiffness distribution and its grasping pose, using a neural physics model trained in simulation. We derived a uniform-pressure tendon model for a flexure-based soft finger, then generated a diverse dataset by randomizing both gripper pose and design parameters. A neural network is trained to approximate this forward simulation, yielding a fast, differentiable surrogate. We embed that surrogate in an end-to-end optimization loop to optimize the ideal stiffness configuration and best grasp pose. Finally, we 3D-print the optimized grippers of various stiffness by changing the structural parameters. We demonstrate that our co-designed grippers significantly outperform baseline designs in both simulation and hardware experiments.
+          </p>
+        </div>
+      </div> 
+    </section>
+
+    <section class="mb-5">
+      <h4 class="mb-2 text-center">Tendon Routing</h4>
+        <div class="row row-cols-1 row-cols-md-2 g-3 justify-content-center">
+          <div class="col">
+             <video controls muted autoplay loop playsinline preload="metadata"
+            class="w-100 lazy-video" style="aspect-ratio:16/9; object-fit:cover;">
+              <source data-src="media/finger_uniform.webm" type="video/webm">
+            </video>
+            <div class="text-center mt-2">
+                <p>Uniform Waypoints Routing <i class="bi bi-x-circle-fill text-danger"></i></p>
+              </div>
+          </div>
+          <div class="col">
+            <video controls muted autoplay loop playsinline preload="metadata"
+            class="w-100 lazy-video" style="aspect-ratio:16/9; object-fit:cover;">
+              <source data-src="media/finger_hirose.webm" type="video/webm">
+            </video>
+            <div class="text-center mt-2">
+                <p>Uniform Pressure Routing <i class="bi bi-check-circle-fill text-success"></i></p>
+              </div>
+          </div>
+      </div>
+      </section>
+
+    <section class="mb-5">
+      <h4 class="mb-4 text-center">Simulation Results</h4>
+      <div class="row row-cols-1 row-cols-md-2 g-3 justify-content-center">
+        <div class="col">
+          <video controls muted autoplay loop playsinline preload="metadata"
+          class="w-100 lazy-video" style="aspect-ratio:16/9; object-fit:cover;">
+            <source data-src="media/sim_apple.webm" type="video/webm">
+          </video>
+        </div>
+        <div class="col">
+          <video controls muted autoplay loop playsinline preload="metadata"
+          class="w-100 lazy-video" style="aspect-ratio:16/9; object-fit:cover;">
+            <source data-src="media/sim_turtle.webm" type="video/webm">
+          </video>
+        </div>
+        <div class="col">
+          <video controls muted autoplay loop playsinline preload="none"
+          class="w-100 lazy-video" style="aspect-ratio:16/9; object-fit:cover;">
+            <source data-src="media/sim_block.webm" type="video/webm">
+          </video>
+        </div>
+        <div class="col">
+          <video controls muted autoplay loop playsinline preload="none"
+          class="w-100 lazy-video" style="aspect-ratio:16/9; object-fit:cover;">
+            <source data-src="media/sim_mustard.webm" type="video/webm">
+          </video>
+        </div>
+    </section>
+
+    <section class="mb-5">
+      <h4 class="mb-4 text-center">3D Printing Different Stiffness</h4>
+      <div class="row row-cols-1 row-cols-md-2 g-3 justify-content-center">
+        <div class="col">
+          <img src="media/print_infill.jpg" class="w-100">
+          <p class="text-center mt-2">Rounded edge utilize the infill more than vertical walls</p>
+        </div>
+        <div class="col">
+          <img src="media/force_press.png" class="w-100">
+          <p class="text-center mt-2">Different infills give different results</p>
+        </div> 
+        </div>
+    </section>
+  
+    <section class="mb-5">
+      <h4 class="mb-4 text-center">Hardware Results</h4>
+      <p class="text-center">* All videos are 1.5x speed unless otherwise specified.</p>
+      <div class="video-container">
+        <div class="row g-0 gx-0">
+          <div class="col-12 col-md-4 video-column">
+            <div class="p-2 bg-col1">
+            <h6 class="text-center">Rigid Gripper</h6>
+              <video controls autoplay muted loop playsinline preload="metadata" class="lazy-video">
+                <source data-src="media/rigid_mustard.mp4" type="video/mp4">
+              </video>
+            </div>
+          </div>
+          <div class="col-12 col-md-4 video-column">
+            <div class="p-2 bg-col2">
+            <h6 class="text-center">Soft Gripper</h6>
+              <video controls autoplay muted loop playsinline preload="metadata" class="lazy-video">
+                <source data-src="media/soft_mustard.mp4" type="video/mp4">
+              </video>
+            </div>
+          </div>
+          <div class="col-12 col-md-4 video-column">
+            <div class="p-2 bg-col3">
+            <h6 class="text-center">⭐ Optimized Gripper</h6>
+              <video controls autoplay muted loop playsinline preload="metadata" class="lazy-video">
+              <source data-src="media/opt_mustard.mp4" type="video/mp4">
+              </video>
+            </div>
+          </div>
+        </div>
+        <div class="row g-0 gx-0">
+          <div class="col-12 col-md-4 video-column">
+            <div class="p-2 bg-col1">
+              <video controls autoplay muted loop playsinline preload="metadata" class="lazy-video">
+                <source data-src="media/rigid_spatula.mp4" type="video/mp4">
+              </video>
+            </div>
+          </div>
+          <div class="col-12 col-md-4 video-column">
+            <div class="p-2 bg-col2">
+              <video controls autoplay muted loop playsinline preload="metadata" class="lazy-video">
+                <source data-src="media/soft_spatula.mp4" type="video/mp4">
+              </video>
+            </div>
+          </div>
+          <div class="col-12 col-md-4 video-column">
+            <div class="p-2 bg-col3">
+              <video controls autoplay muted loop playsinline preload="metadata" class="lazy-video">
+                <source data-src="media/opt_spatula.mp4" type="video/mp4">
+              </video>
+            </div>
+          </div>
+        </div>
+        <!-- Light Bunny -->
+        <div class="row g-0 gx-0">
+          <div class="col-12 col-md-4 video-column">
+            <div class="p-2 bg-col1">
+              <video controls muted autoplay loop playsinline preload="metadata" class="lazy-video">
+                <source data-src="media/rigid_lightbunny.mp4" type="video/mp4">
+              </video>
+            </div>
+          </div>
+          <div class="col-12 col-md-4 video-column">
+            <div class="p-2 bg-col2">
+              <video controls muted autoplay loop playsinline preload="metadata" class="lazy-video">
+                <source data-src="media/soft_lightbunny.mp4" type="video/mp4">
+              </video>
+            </div>
+          </div>
+          <div class="col-12 col-md-4 video-column">
+            <div class="p-2 bg-col3">
+              <video controls muted autoplay loop playsinline preload="metadata" class="lazy-video">
+                <source data-src="media/opt_lightbunny.mp4" type="video/mp4">
+              </video>
+            </div>
+          </div>
+        </div>
+
+        <!-- Watermelon -->
+        <div class="row g-0 gx-0">
+          <div class="col-12 col-md-4 video-column">
+            <div class="p-2 bg-col1">
+              <video controls muted autoplay loop playsinline preload="metadata" class="lazy-video">
+                <source data-src="media/rigid_watermelon.mp4" type="video/mp4">
+              </video>
+            </div>
+          </div>
+          <div class="col-12 col-md-4 video-column">
+            <div class="p-2 bg-col2">
+              <video controls muted autoplay loop playsinline preload="metadata" class="lazy-video">
+                <source data-src="media/soft_watermelon.mp4" type="video/mp4">
+              </video>
+            </div>
+          </div>
+          <div class="col-12 col-md-4 video-column">
+            <div class="p-2 bg-col3">
+              <video controls muted autoplay loop playsinline preload="metadata" class="lazy-video">
+                <source data-src="media/opt_watermelon.mp4" type="video/mp4">
+              </video>
+            </div>
+          </div>
+        </div>
+
+        <!-- Heavy Bunny -->
+        <div class="row g-0 gx-0">
+          <div class="col-12 col-md-4 video-column">
+            <div class="p-2 bg-col1">
+              <video controls muted autoplay loop playsinline preload="metadata" class="lazy-video">
+                <source data-src="media/rigid_heavybunny.mp4" type="video/mp4">
+              </video>
+            </div>
+          </div>
+          <div class="col-12 col-md-4 video-column">
+            <div class="p-2 bg-col2">
+              <video controls muted autoplay loop playsinline preload="metadata" class="lazy-video">
+                <source data-src="media/soft_heavybunny.mp4" type="video/mp4">
+              </video>
+            </div>
+          </div>
+          <div class="col-12 col-md-4 video-column">
+            <div class="p-2 bg-col3">
+              <video controls muted autoplay loop playsinline preload="metadata" class="lazy-video">
+                <source data-src="media/opt_heavybunny.mp4" type="video/mp4">
+              </video>
+            </div>
+          </div>
+        </div>
+
+        <!-- Car -->
+        <div class="row g-0 gx-0">
+          <div class="col-12 col-md-4 video-column">
+            <div class="p-2 bg-col1">
+              <video controls muted autoplay loop playsinline preload="metadata" class="lazy-video">
+                <source data-src="media/rigid_car.mp4" type="video/mp4">
+              </video>
+            </div>
+          </div>
+          <div class="col-12 col-md-4 video-column">
+            <div class="p-2 bg-col2">
+              <video controls muted autoplay loop playsinline preload="metadata" class="lazy-video">
+                <source data-src="media/soft_car.mp4" type="video/mp4">
+              </video>
+            </div>
+          </div>
+          <div class="col-12 col-md-4 video-column">
+            <div class="p-2 bg-col3">
+              <video controls muted autoplay loop playsinline preload="metadata" class="lazy-video">
+                <source data-src="media/opt_car.mp4" type="video/mp4">
+              </video>
+            </div>
+          </div>
+        </div>
+
+        <!-- Spray -->
+        <div class="row g-0 gx-0">
+          <div class="col-12 col-md-4 video-column">
+            <div class="p-2 bg-col1">
+              <video controls muted autoplay loop playsinline preload="metadata" class="lazy-video">
+                <source data-src="media/rigid_spray.mp4" type="video/mp4">
+              </video>
+            </div>
+          </div>
+          <div class="col-12 col-md-4 video-column">
+            <div class="p-2 bg-col2">
+              <video controls muted autoplay loop playsinline preload="metadata" class="lazy-video">
+                <source data-src="media/soft_spray.mp4" type="video/mp4">
+              </video>
+            </div>
+          </div>
+          <div class="col-12 col-md-4 video-column">
+            <div class="p-2 bg-col3">
+              <video controls muted autoplay loop playsinline preload="metadata" class="lazy-video">
+                <source data-src="media/opt_spray.mp4" type="video/mp4">
+              </video>
+            </div>
+          </div>
+        </div>
+
+        <!-- Egg -->
+        <div class="row g-0 gx-0">
+          <div class="col-12 col-md-4 video-column">
+            <div class="p-2 bg-col1">
+              <video controls muted autoplay loop playsinline preload="metadata" class="lazy-video">
+                <source data-src="media/rigid_egg.mp4" type="video/mp4">
+              </video>
+            </div>
+          </div>
+          <div class="col-12 col-md-4 video-column">
+            <div class="p-2 bg-col2">
+              <video controls muted autoplay loop playsinline preload="metadata" class="lazy-video">
+                <source data-src="media/soft_egg.mp4" type="video/mp4">
+              </video>
+            </div>
+          </div>
+          <div class="col-12 col-md-4 video-column">
+            <div class="p-2 bg-col3">
+              <video controls muted autoplay loop playsinline preload="metadata" class="lazy-video">
+                <source data-src="media/opt_egg.mp4" type="video/mp4">
+              </video>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- BibTeX -->
+    <section>
+      <div class="row justify-content-center">
+        <div class="col-12 col-md-10 col-lg-9">
+      <h5 class="mb-3 text-left">BibTeX</h5>
+      <pre><code>@inproceedings{yi2025codesign,
+title  = {Co-Design of Soft Gripper with Neural Physics},
+author = {Yi, Sha and Bai, Xueqian and Singh, Adabhav and Ye, Jianglong and Tolley, Michael T and Wang, Xiaolong},
+}</code></pre>
+    </div>
+    </div>
+    </section>
+  </main>
+
+  <!-- Bootstrap JS (optional) -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+  <script>
+    document.addEventListener('DOMContentLoaded', () => {
+      const vids = document.querySelectorAll('video.lazy-video');
+      if('IntersectionObserver' in window) {
+        const obs = new IntersectionObserver((entries, observer) => {
+          entries.forEach(entry => {
+            if(entry.isIntersecting) {
+              const v = entry.target;
+              const src = v.querySelector('source').dataset.src;
+              v.querySelector('source').src = src;
+              v.load();
+              v.play().catch(()=>{});
+              observer.unobserve(v);
+            }
+          });
+        }, { rootMargin: '200px' });
+        vids.forEach(v => obs.observe(v));
+      } else {
+        vids.forEach(v => {
+          const src = v.querySelector('source').dataset.src;
+          v.querySelector('source').src = src;
+          v.load();
+          v.play().catch(()=>{});
+        });
+      }
+    });
+  </script>
+</body>
+</html>
