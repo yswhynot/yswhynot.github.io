@@ -1,34 +1,119 @@
-"adams":
-  - firstname: ["Edwin", "E.", "E. P.", "Edwin Plimpton"]
-    url: https://en.wikipedia.org/wiki/Edwin_Plimpton_Adams
+"wang":
+  - firstname: ["Xiaolong"]
+    url: https://xiaolonw.github.io/index.html
 
-"podolsky":
-  - firstname: ["Boris", "B.", "B. Y.", "Boris Yakovlevich"]
-    url: https://en.wikipedia.org/wiki/Boris_Podolsky
+"tolley":
+  - firstname: ["Michael", "Michael T", "Michael T."]
+    url: https://tolley.eng.ucsd.edu/
 
-"rosen":
-  - firstname: ["Nathan", "N."]
-    url: https://en.wikipedia.org/wiki/Nathan_Rosen
+"sycara":
+  - firstname: ["Katia"]
+    url: http://www.cs.cmu.edu/~sycara/
 
-"bach":
-  - firstname: ["Johann Sebastian", "J. S."]
-    url: https://en.wikipedia.org/wiki/Johann_Sebastian_Bach
+"temel":
+  - firstname: ["Zeynep"]
+    url: https://www.ri.cmu.edu/ri-faculty/zeynep-temel/
 
-  - firstname: ["Carl Philipp Emanuel", "C. P. E."]
-    url: https://en.wikipedia.org/wiki/Carl_Philipp_Emanuel_Bach
+"bai":
+  - firstname: ["Xueqian"]
+    url: https://hakuna25.github.io/
 
-"przibram":
-  - firstname: ["Karl"]
-    url: https://link.springer.com/article/10.1007/s00016-019-00242-z
+"ye":
+  - firstname: ["Jianglong"]
+    url: https://jianglongye.com/
 
-"schrodinger":
-  - firstname: ["Erwin"]
-    url: https://en.wikipedia.org/wiki/Erwin_Schr%C3%B6dinger
+"qiu":
+  - firstname: ["Ri-Zhao", "Ri-zhao"]
+    url: https://rogerqi.github.io/ 
 
-"lorentz":
-  - firstname: ["Hendrik Antoon"]
-    url: https://en.wikipedia.org/wiki/Hendrik_Lorentz
+"yang":
+  - firstname: ["Shiqi"]
+    url: https://aaronyang1223.github.io/ 
+  - firstname: ["Ge"]
+    url: https://www.episodeyang.com/ 
+  - firstname: ["Ruihan"]
+    url: https://rchalyang.github.io/ 
+  - firstname: ["Yupeng"]
+    url: https://yupengyanguncc.github.io/ 
 
-"planck":
-  - firstname: ["Max"]
-    url: https://en.wikipedia.org/wiki/Max_Planck
+"cheng":
+  - firstname: ["Xuxin"]
+    url: https://xuxin.ai/ 
+
+"chawla":
+  - firstname: ["Chaitanya"]
+    url: https://chaitanya1chawla.github.io/   
+
+"li":
+  - firstname: ["Jialong"]
+    url: https://rexskywalkerlee.github.io/ 
+
+"he":
+  - firstname: ["Tairan"]
+    url: https://tairanhe.com/ 
+
+"yan":
+  - firstname: ["Ge"]
+    url: https://geyan21.github.io/ 
+
+"hoque":
+  - firstname: ["Ryan"]
+    url: https://ryanhoque.github.io/ 
+
+"zhang":
+  - firstname: ["Jian"]
+    url: https://www.linkedin.com/in/jianzhangpurdue/ 
+  - firstname: ["Yanze"]
+    url: https://yanzezhang97.github.io/ 
+
+"shi":
+  - firstname: ["Guanya"]
+    url: https://www.gshi.me/ 
+
+"lu":
+  - firstname: ["Chenhao"]
+    url: https://ctp314.github.io/ 
+
+"liu":
+  - firstname: ["Minghuan"]
+    url: https://minghuanliu.com/ 
+
+"qin":
+  - firstname: ["Yuzhe"]
+    url: https://yzqin.github.io/ 
+
+"ding":
+  - firstname: ["Runyu"]
+    url: https://dingry.github.io/ 
+
+"lyu":
+  - firstname: ["Yiwei"]
+    url: https://www.andrew.cmu.edu/user/yiweilyu/ 
+
+"luo":
+  - firstname: ["Wenhao"]
+    url: https://www.cs.uic.edu/~wenhao/ 
+
+"nam":
+  - firstname: ["Changjoo"]
+    url: https://sites.google.com/site/changjoonam/ 
+
+"hansen":
+  - firstname: ["Nick", "Nickolas"]
+    url: https://www.nicklashansen.com/ 
+
+"duan":
+  - firstname: ["Yan", "Rocky"]
+    url: http://rockyduan.com/ 
+
+"abbeel":
+  - firstname: ["Pieter"]
+    url: https://people.eecs.berkeley.edu/~pabbeel/ 
+
+"st. pierre":
+  - firstname: ["Ryan"]
+    url: https://rffl.net/people.html 
+
+"yuan":
+  - firstname: ["Chengjing"]
+    url: https://www.yuanchengjing.com/
