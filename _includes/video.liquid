@@ -1,34 +1,26 @@
 {% assign extension = include.path | split: '.' | last %}
 
-<figure>
-  {% if extension == 'mp4' or extension == 'webm' or extension == 'ogg' %}
+<figure
+  {% if include.class %}
+    class="{{ include.class }}"
+  {% endif %}
+  {%- comment -%}
+    This is the new logic.
+    If 'sizes' is passed, use it to set a responsive max-width.
+    Otherwise, use any 'style' passed in.
+  {%- endcomment -%}
+  {% if include.sizes %}
+    style="max-width: {{ include.sizes }}; margin: 0 auto 1rem;"
+  {% elsif include.style %}
+    style="{{ include.style }}"
+  {% endif %}
+>
+  {% if extension == 'mp4' or extension == 'webm' or extension == 'ogg' or extension == 'avif' %}
     <video
       src="{% if include.cache_bust %}{{ include.path | relative_url | bust_file_cache }}{% else %}{{ include.path | relative_url }}{% endif %}"
-      {% if include.class %}
-        class="{{ include.class }}"
-      {% endif %}
-      {% if include.width %}
-        width="{{ include.width }}"
-      {% else %}
-        width="auto"
-      {% endif %}
-      {% if include.height %}
-        height="{{ include.height }}"
-      {% else %}
-        height="auto"
-      {% endif %}
-      {% if include['min-width'] %}
-        min-width="{{ include.min-width }}"
-      {% endif %}
-      {% if include['min-height'] %}
-        min-height="{{ include.min-height }}"
-      {% endif %}
-      {% if include['max-width'] %}
-        max-width="{{ include.max-width }}"
-      {% endif %}
-      {% if include['max-height'] %}
-        height="{{ include.max-height }}"
-      {% endif %}
+      width="100%"
+      height="auto"
+      style="border-radius: 0.25rem;"
       {% if include.title %}
         title="{{ include.title }}"
       {% endif %}
@@ -51,38 +43,15 @@
         poster="{{ include.poster }}"
       {% endif %}
     />
-
   {% else %}
     <iframe
       src="{{ include.path }}"
-      {% if include.class %}
-        class="{{ include.class }}"
-      {% endif %}
+      width="100%"
+      height="auto"
+      style="border-radius: 0.25rem;"
       frameborder="0"
       allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
       allowfullscreen
-      {% if include.width %}
-        width="{{ include.width }}"
-      {% else %}
-        width="auto"
-      {% endif %}
-      {% if include.height %}
-        height="{{ include.height }}"
-      {% else %}
-        height="auto"
-      {% endif %}
-      {% if include['min-width'] %}
-        min-width="{{ include.min-width }}"
-      {% endif %}
-      {% if include['min-height'] %}
-        min-height="{{ include.min-height }}"
-      {% endif %}
-      {% if include['max-width'] %}
-        max-width="{{ include.max-width }}"
-      {% endif %}
-      {% if include['max-height'] %}
-        height="{{ include.max-height }}"
-      {% endif %}
       {% if include.alt %}
         alt="{{ include.alt }}"
       {% endif %}
