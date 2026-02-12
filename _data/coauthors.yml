@@ -3,7 +3,7 @@
     url: https://xiaolonw.github.io/index.html
 
 "tolley":
-  - firstname: ["Michael", "Michael T", "Michael T."]
+  - firstname: ["Michael", "Michael T", "Michael T.", "Mike"]
     url: https://tolley.eng.ucsd.edu/
 
 "sycara":
@@ -137,3 +137,11 @@
 "bandi":
   - firstname: ["Jai Krishna"]
     url: https://textzip.github.io/about/ 
+
+"morimoto":
+  - firstname: ["Tania"]
+    url: https://jacobsschool.ucsd.edu/people/profile/tania-morimoto 
+
+"kim":
+  - firstname: ["Sukjun"]
+    url: https://www.sukjunkim.com/ 
