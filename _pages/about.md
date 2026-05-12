@@ -41,6 +41,7 @@ I also spent time at Amazon Robotics, Microsoft, and a couple of early-stage sta
 ---
 ### News
 
+- [2026/5] I will join NYU (joint [Courant CS](https://cs.nyu.edu/home/index.html) and [Tandon MAE](https://engineering.nyu.edu/academics/departments/mechanical-and-aerospace-engineering)) as an Assistant Professor in Fall 2027!
 - [2025/10] I'm selected as a [Rising Star](https://risingstars-eecs.mit.edu/participants/sha-yi/) at the [MIT EECS Rising Star workshop](https://risingstars-eecs.mit.edu/) in Boston.
 - [2025/9] I co-organized a workshop at CoRL 2025 on [Human to Robot (H2R): Workshop on Sensorizing, Modeling, and Learning from Humans](https://sites.google.com/view/h2r-corl2025/).
 - [2025/5] We organized a workshop at RSS 2025 on [Brain and Brawn: Robot Hardware-Aware Intelligence](https://rss-hardware-intelligence.github.io/)! .
