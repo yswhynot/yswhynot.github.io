@@ -23,7 +23,10 @@ profile:
 selected_papers: true
 
 # Enable the 'News' section on this page
-news: true
+announcements:
+  enabled: true
+  scrollable: true # adds a vertical scroll bar if there are more than 3 news items
+  limit: 5 # leave blank to include all the news in the `_news` folder
 
 # Enable the 'Social' icons on this page
 social: false
@@ -37,12 +40,3 @@ I am a Postdoc at UC San Diego working with [Xiaolong Wang](https://xiaolonw.git
 I completed my PhD from the [Robotics Institute](http://ri.cmu.edu) at Carnegie Mellon University coadvised by [Katia Sycara](http://www.cs.cmu.edu/~sycara/) and [Zeynep Temel](https://www.ri.cmu.edu/ri-faculty/zeynep-temel/). My research is supported by the CMU Presidential Fellowship (2020 - 2021). Prior to this, I received my MS degree from the same department with [Katia Sycara](http://www.cs.cmu.edu/~sycara/). I completed my BEng in Electronics and Information Engineering at The Hong Kong Polytechnic University. 
 
 I also spent time at Amazon Robotics, Microsoft, and a couple of early-stage startups.
-
----
-### News
-
-- [2026/5] I will join NYU (joint [Courant CS](https://cs.nyu.edu/home/index.html) and [Tandon MAE](https://engineering.nyu.edu/academics/departments/mechanical-and-aerospace-engineering)) as an Assistant Professor in Fall 2027!
-- [2025/10] I'm selected as a [Rising Star](https://risingstars-eecs.mit.edu/participants/sha-yi/) at the [MIT EECS Rising Star workshop](https://risingstars-eecs.mit.edu/) in Boston.
-- [2025/9] I co-organized a workshop at CoRL 2025 on [Human to Robot (H2R): Workshop on Sensorizing, Modeling, and Learning from Humans](https://sites.google.com/view/h2r-corl2025/).
-- [2025/5] We organized a workshop at RSS 2025 on [Brain and Brawn: Robot Hardware-Aware Intelligence](https://rss-hardware-intelligence.github.io/)! .
-- [2024/5] We organized a workshop at ICRA 2024 on [Unconventional Robots: Universal Lessons for Designing Unique Systems](https://sites.google.com/andrew.cmu.edu/unconventionalrobots)! See more on [Twitter](https://x.com/unconv_robots).
