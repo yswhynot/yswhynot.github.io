@@ -13,7 +13,7 @@
       row stack height so the list scrolls (compact row CSS made tall max-heights fit everything).
     {%- endcomment -%}
     {% assign news_scroll_wrap = false %}
-    {% if include.limit and page.announcements.scrollable and news_size > 1 %}
+    {% if page.announcements.scrollable and news_size > 1 %}
       {% assign news_scroll_wrap = true %}
     {% endif %}
     <div
