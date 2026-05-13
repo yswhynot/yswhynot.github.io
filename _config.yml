@@ -46,6 +46,11 @@ bib_search: true
 
 max_width: 930px
 
+# Navbar CV: open this PDF directly (file lives under assets/pdf/ unless the value contains ://).
+# Remove `cv_navbar_pdf` if you prefer a built-in CV page again (restore _pages/cv.md with nav: true).
+cv_navbar_pdf: yisha_resume.pdf
+cv_navbar_order: 3
+
 # -----------------------------------------------------------------------------
 # Open Graph & Schema.org
 # -----------------------------------------------------------------------------

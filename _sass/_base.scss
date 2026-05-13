@@ -936,6 +936,51 @@ html.transition *:after {
       }
     }
   }
+
+  .about-announcements {
+    margin-bottom: 2.75rem;
+
+    > h2 {
+      font-size: 1.35rem;
+      margin-bottom: 0.35rem;
+    }
+
+    .news-from-data {
+      font-size: 0.88rem;
+
+      .table {
+        margin-bottom: 0;
+      }
+
+      th,
+      td {
+        padding-top: 0.12rem;
+        padding-bottom: 0.12rem;
+        line-height: 1.32;
+        vertical-align: top;
+      }
+
+      th {
+        width: 1%;
+        white-space: nowrap;
+        padding-right: 0.35rem;
+        padding-left: 0;
+        font-weight: 600;
+      }
+
+      td {
+        padding-left: 0.1rem;
+      }
+
+      // Scroll viewport: max-height must stay below total row height or the bar disappears
+      // (compact typography made the old min(..., 8.25rem) taller than the table).
+      .news-from-data__viewport--limited {
+        max-height: min(30vh, 5rem);
+        overflow: auto !important;
+        -webkit-overflow-scrolling: touch;
+      }
+    }
+  }
 }
 
 progress {

@@ -58,9 +58,32 @@
 
           <!-- Other pages -->
           {% assign sorted_pages = site.pages | sort: 'nav_order' %}
+          {% assign cv_nav_injected = false %}
+          {% assign cv_nav_slot = site.cv_navbar_order | default: 3 %}
           {% for p in sorted_pages %}
             {% if p.nav and p.autogen == null %}
-              {% if p.dropdown %}
+              {% if site.cv_navbar_pdf %}
+                {% if cv_nav_injected == false and p.nav_order >= cv_nav_slot %}
+                  {% assign cv_nav_injected = true %}
+                  {% if site.cv_navbar_pdf contains '://' %}
+                    {% assign cv_nav_href = site.cv_navbar_pdf %}
+                  {% else %}
+                    {% assign cv_nav_href = site.cv_navbar_pdf | prepend: 'assets/pdf/' | relative_url %}
+                  {% endif %}
+                  <li class="nav-item">
+                    <a
+                      class="nav-link"
+                      href="{{ cv_nav_href }}"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                    >
+                      {{- site.cv_navbar_title | default: 'CV' -}}
+                    </a>
+                  </li>
+                {% endif %}
+              {% endif %}
+              {% unless site.cv_navbar_pdf and p.permalink == '/cv/' %}
+                {% if p.dropdown %}
                 {% assign has_active_child = false %}
                 {% for child in p.children %}
                   {% if page.title == child.title %}
@@ -115,8 +138,26 @@
                   </a>
                 </li>
               {% endif %}
+              {% endunless %}
             {% endif %}
           {% endfor %}
+          {% if site.cv_navbar_pdf and cv_nav_injected == false %}
+            {% if site.cv_navbar_pdf contains '://' %}
+              {% assign cv_nav_href = site.cv_navbar_pdf %}
+            {% else %}
+              {% assign cv_nav_href = site.cv_navbar_pdf | prepend: 'assets/pdf/' | relative_url %}
+            {% endif %}
+            <li class="nav-item">
+              <a
+                class="nav-link"
+                href="{{ cv_nav_href }}"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                {{- site.cv_navbar_title | default: 'CV' -}}
+              </a>
+            </li>
+          {% endif %}
           {% if site.search_enabled %}
             <!-- Search -->
             <li class="nav-item">

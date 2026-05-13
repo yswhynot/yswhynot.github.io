@@ -1,22 +1,28 @@
-<div class="news">
+<div class="news news-from-data">
   {% if site.data.news != blank and site.data.news.size > 0 %}
     {% assign news_size = site.data.news | size %}
+    {%- comment -%} Newest first: sort by ISO date string, then reverse ascending order {%- endcomment -%}
+    {% assign news = site.data.news | sort: 'date' | reverse %}
+    {% if include.limit and page.announcements.limit %}
+      {% assign news_limit = page.announcements.limit %}
+    {% else %}
+      {% assign news_limit = news_size %}
+    {% endif %}
+    {%- comment -%}
+      Scroll when scrollable is on and there are 2+ items. Viewport height stays below typical
+      row stack height so the list scrolls (compact row CSS made tall max-heights fit everything).
+    {%- endcomment -%}
+    {% assign news_scroll_wrap = false %}
+    {% if include.limit and page.announcements.scrollable and news_size > 1 %}
+      {% assign news_scroll_wrap = true %}
+    {% endif %}
     <div
-      class="table-responsive"
-      {% if include.limit and page.announcements.scrollable and news_size > 3 %}
-        style="max-height: 60vw"
-      {% endif %}
+      class="table-responsive news-from-data__viewport{% if news_scroll_wrap %} news-from-data__viewport--limited{% endif %}"
     >
       <table class="table table-sm table-borderless">
-        {% assign news = site.data.news | reverse %}
-        {% if include.limit and page.announcements.limit %}
-          {% assign news_limit = page.announcements.limit %}
-        {% else %}
-          {% assign news_limit = news_size %}
-        {% endif %}
         {% for item in news limit: news_limit %}
           <tr>
-            <th scope="row" style="width: 20%">{{ item.date | date: '%b %d, %Y' }}</th>
+            <th scope="row">{{ item.date | date: '%b %d, %Y' }}</th>
             <td>
               {{ item.text }}
             </td>
