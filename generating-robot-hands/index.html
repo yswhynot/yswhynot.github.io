@@ -102,21 +102,21 @@
               <video src="media/teleop.webm" controls muted autoplay loop playsinline preload="metadata" class="w-100 media-video"></video>
             </div>
           </div>
-          <p class="text-muted mt-2 mx-auto section-intro">Human thumb-index gestures are retargeted to the generated hand without learning a separate controller.</p>
+          <p class="text-muted mt-2 mx-auto section-intro">Human thumb-index gestures are retargeted to the generated hand using only inverse kinematics.</p>
         </article>
 
         <article class="mb-4 text-center">
-          <h5 class="mb-2">Thin-object pinch</h5>
+          <h5 class="mb-2">Precise fingertip tracking</h5>
           <div class="row justify-content-center">
             <div class="col-12 col-lg-9">
               <video src="media/napkin.webm" controls muted autoplay loop playsinline preload="metadata" class="w-100 media-video"></video>
             </div>
           </div>
-          <p class="text-muted mt-2 mx-auto section-intro">The generalist hand pinches and lifts a flexible napkin.</p>
+          <p class="text-muted mt-2 mx-auto section-intro">Without the need of complex retargeting algorithms, the generalist hand can perform precise tasks like holding a napkin while moving fingers.</p>
         </article>
 
         <article class="text-center">
-          <h5 class="mb-2">Programmed trajectories</h5>
+          <h5 class="mb-2">Non-teleoperatable trajectories</h5>
           <div class="row justify-content-center">
             <div class="col-12 col-lg-9">
               <video src="media/finger-paint.webm" controls muted autoplay loop playsinline preload="metadata" class="w-100 media-video"></video>
@@ -130,7 +130,7 @@
     <section class="mb-5">
       <div class="row justify-content-center">
         <div class="col-12 col-lg-9">
-          <h5 class="mb-3">Table 1. Full-Dataset Coverage</h5>
+          <h5 class="mb-3">Table 1. Full-Dataset Coverage of thumb and index fingers</h5>
           <p class="text-muted">Percentage of frames with fingertip error below 1 mm.</p>
           <div class="table-responsive">
             <table class="table table-sm table-striped align-middle">
@@ -192,12 +192,12 @@
     <section id="low-dof" class="mb-5">
       <h4 class="mb-3 text-center">Low-DoF Specialized Hardware</h4>
       <p class="text-center text-muted mx-auto section-intro">
-        For structured tasks, the method generates 3-DoF hands with spatial four-bar mimic joints. The passive coupling reduces actuation while preserving the target behavior.
+        For specific tasks, the method generates 3-DoF hands with spatial four-bar mimic joints. The passive coupling reduces actuation (and cost!) while preserving the target behavior.
       </p>
 
       <div class="mb-4">
         <h5 class="mb-2">Twist lid off</h5>
-        <p class="text-muted">A lid-twisting human motion becomes a compact hand whose coupled motion rotates the lid.</p>
+        <p class="text-muted">A lid-twisting human motion > coupled motion rotates the lid.</p>
         <div class="row row-cols-1 row-cols-md-2 g-3">
           <div class="col">
             <video src="media/lid-human.webm" controls muted autoplay loop playsinline preload="metadata" class="w-100 media-video"></video>
@@ -212,7 +212,7 @@
 
       <div class="mb-4">
         <h5 class="mb-2">Key insertion</h5>
-        <p class="text-muted">A key insertion demonstration generates a task-specific hand that holds and inserts the key.</p>
+        <p class="text-muted">A key insertion demonstration > task-specific hand that holds and inserts the key.</p>
         <div class="row row-cols-1 row-cols-md-2 g-3">
           <div class="col">
             <video src="media/key-human.webm" controls muted autoplay loop playsinline preload="metadata" class="w-100 media-video"></video>
@@ -227,7 +227,7 @@
 
       <div>
         <h5 class="mb-2">Circle-square mimic</h5>
-        <p class="text-muted">The thumb follows a circle while the index finger follows a square, producing structured motion with predefined trajectories.</p>
+        <p class="text-muted">Predefined trajectory (the thumb follows a circle while the index finger follows a square) > generated hand that tracks the motion.</p>
         <div class="row row-cols-1 row-cols-md-2 g-3">
           <div class="col">
             <div class="trajectory-card">
@@ -324,7 +324,7 @@
           <div class="pipeline-card">
             <div class="pipeline-card-media pipeline-card-stack">
               <img src="media/finger_mesh.jpg" alt="Generate robot hand mesh">
-              <p class="pipeline-card-text">Use simple geometries to generate the mesh, then polish it in Fusion 360.</p>
+              <p class="pipeline-card-text">We use simple geometries to generate the robot hand mesh, then polish it in Fusion 360.</p>
             </div>
             <p class="pipeline-card-caption">Generate robot hand mesh</p>
           </div>
