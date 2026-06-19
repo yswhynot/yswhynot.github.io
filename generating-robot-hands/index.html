@@ -1,0 +1,421 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Generating Robot Hands from Human Demonstrations">
+  <title>Generating Robot Hands from Human Demonstrations</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.css" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css?v=20260619v">
+</head>
+<body>
+  <main class="container py-5">
+    <section class="mb-5 text-center">
+      <p class="eyebrow">Project page</p>
+      <h1 class="fw-bold mx-auto">Generating Robot Hands from Human Demonstrations</h1>
+      <p class="lead mx-auto mt-3">Human motion can be used not only to train robot policies, but also optimize hardware designs.</p>
+
+      <p class="lead authors mx-auto mt-4 mb-2">
+        <a href="https://yswhynot.github.io/" class="text-decoration-none">Sha Yi</a>,
+        <a href="https://www.nicklashansen.com/" class="text-decoration-none">Nicklas Hansen</a>,
+        <a href="https://hakuna25.github.io/" class="text-decoration-none">Xueqian Bai</a>,
+        <a href="https://sferrazza.cc/" class="text-decoration-none">Carmelo Sferrazza</a>,
+        <a href="https://tolley.eng.ucsd.edu/" class="text-decoration-none">Michael T. Tolley</a>,
+        <a href="https://xiaolonw.github.io/index.html" class="text-decoration-none">Xiaolong Wang</a>
+      </p>
+      <p class="lead text-muted mx-auto mt-4 mb-2">UC San Diego | Amazon Frontier AI and Robotics</p>
+
+      <div class="d-flex justify-content-center flex-wrap gap-2 mt-4">
+        <a href="https://arxiv.org/pdf/2606.20549" class="btn btn-primary rounded-pill px-4" target="_blank" rel="noopener">
+          <i class="bi bi-file-earmark-text-fill me-1"></i>Paper
+        </a>
+        <span class="btn btn-outline-secondary rounded-pill px-4 disabled">Code coming soon</span>
+        <a href="#citation" class="btn btn-outline-dark rounded-pill px-4">BibTeX</a>
+      </div>
+    </section>
+
+    <section class="mb-5">
+      <div class="video-container">
+      <div class="row justify-content-center">
+        <div class="col-12 col-lg-9">
+          <video src="media/teaser-speed.webm" controls muted autoplay loop playsinline preload="metadata" class="w-100 media-video"></video>
+        </div>
+      </div>
+      </div>
+    </section>
+
+    <section id="overview" class="mb-5">
+      <h4 class="mb-3 text-center">Abstract</h4>
+      <div class="row justify-content-center">
+        <div class="col-12 col-lg-9">
+          <p class="text-justify">
+            We present a data-driven framework for generating robot hands from human demonstrations. Instead of tightly coupling the hardware design with a specific control policy, the hand is designed under the same controller used after fabrication: inverse kinematics that matches target thumb-index fingertip motion. The framework produces a high-DoF generalist hand for a wide range of daily tasks and lower-DoF specialized hands whose mimic joints encode structured task motions directly into hardware.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <section class="mb-5">
+      <div class="row justify-content-center">
+      <div class="row row-cols-1 row-cols-sm-2 row-cols-lg-4 g-3 justify-content-center">
+        <div class="col">
+          <div class="stat-box stat-teal h-100">
+            <strong>4M+</strong>
+            <span><a href="https://oakink.net/v2/" target="_blank" rel="noopener">human demonstration</a> frames used</span>
+          </div>
+        </div>
+        <div class="col">
+          <div class="stat-box stat-blue h-100">
+            <strong>0.24 mm</strong>
+            <span>overall 6-DoF fingertip tracking error</span>
+          </div>
+        </div>
+        <div class="col">
+          <div class="stat-box stat-coral h-100">
+            <strong>95.38%</strong>
+            <span>overall tracking error within 1 mm</span>
+          </div>
+        </div>
+        <div class="col">
+          <div class="stat-box stat-gold h-100">
+            <strong>&lt; 30 min</strong>
+            <span>design generation time of specialized hands</span>
+          </div>
+        </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="high-dof" class="mb-5">
+      <h4 class="mb-3 text-center">High-DoF Generalist Hardware</h4>
+      <p class="text-center text-muted mx-auto section-intro">
+        The 6-DoF design is optimized over the full human motion dataset. After fabrication, it uses online inverse kinematics to retarget thumb-index fingertip motion in real time.
+      </p>
+
+      <div class="video-container">
+        <article class="mb-4 text-center">
+          <h5 class="mb-2">Real-time teleoperation</h5>
+          <div class="row justify-content-center">
+            <div class="col-12 col-lg-9">
+              <video src="media/teleop.webm" controls muted autoplay loop playsinline preload="metadata" class="w-100 media-video"></video>
+            </div>
+          </div>
+          <p class="text-muted mt-2 mx-auto section-intro">Human thumb-index gestures are retargeted to the generated hand without learning a separate controller.</p>
+        </article>
+
+        <article class="mb-4 text-center">
+          <h5 class="mb-2">Thin-object pinch</h5>
+          <div class="row justify-content-center">
+            <div class="col-12 col-lg-9">
+              <video src="media/napkin.webm" controls muted autoplay loop playsinline preload="metadata" class="w-100 media-video"></video>
+            </div>
+          </div>
+          <p class="text-muted mt-2 mx-auto section-intro">The generalist hand pinches and lifts a flexible napkin.</p>
+        </article>
+
+        <article class="text-center">
+          <h5 class="mb-2">Programmed trajectories</h5>
+          <div class="row justify-content-center">
+            <div class="col-12 col-lg-9">
+              <video src="media/finger-paint.webm" controls muted autoplay loop playsinline preload="metadata" class="w-100 media-video"></video>
+            </div>
+          </div>
+          <p class="text-muted mt-2 mx-auto section-intro">Fingertips trace structured paths that are difficult to teleoperate directly.</p>
+        </article>
+      </div>
+    </section>
+
+    <section class="mb-5">
+      <div class="row justify-content-center">
+        <div class="col-12 col-lg-9">
+          <h5 class="mb-3">Table 1. Full-Dataset Coverage</h5>
+          <p class="text-muted">Percentage of frames with fingertip error below 1 mm.</p>
+          <div class="table-responsive">
+            <table class="table table-sm table-striped align-middle">
+              <thead>
+                <tr>
+                  <th>DoF</th>
+                  <th>Hand</th>
+                  <th class="text-end">Thumb</th>
+                  <th class="text-end">Index</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td rowspan="3">3</td>
+                  <td>3-DoF mimic-joint hand</td>
+                  <td class="text-end">12.22%</td>
+                  <td class="text-end">2.39%</td>
+                </tr>
+                <tr>
+                  <td>3-DoF fully actuated hand</td>
+                  <td class="text-end">10.07%</td>
+                  <td class="text-end">4.98%</td>
+                </tr>
+                <tr>
+                  <td>Inspire Hand</td>
+                  <td class="text-end">0.00%</td>
+                  <td class="text-end">0.04%</td>
+                </tr>
+                <tr>
+                  <td>4</td>
+                  <td>4-DoF fully actuated hand</td>
+                  <td class="text-end">16.27%</td>
+                  <td class="text-end">10.60%</td>
+                </tr>
+                <tr>
+                  <td>5</td>
+                  <td>5-DoF fully actuated hand</td>
+                  <td class="text-end">63.12%</td>
+                  <td class="text-end">40.56%</td>
+                </tr>
+                <tr>
+                  <td rowspan="2">6</td>
+                  <td>XHand robot hand</td>
+                  <td class="text-end">83.69%</td>
+                  <td class="text-end">3.77%</td>
+                </tr>
+                <tr class="table-success">
+                  <td>6-DoF fully actuated hand</td>
+                  <td class="text-end fw-bold">95.38%</td>
+                  <td class="text-end fw-bold">98.19%</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="low-dof" class="mb-5">
+      <h4 class="mb-3 text-center">Low-DoF Specialized Hardware</h4>
+      <p class="text-center text-muted mx-auto section-intro">
+        For structured tasks, the method generates 3-DoF hands with spatial four-bar mimic joints. The passive coupling reduces actuation while preserving the target behavior.
+      </p>
+
+      <div class="mb-4">
+        <h5 class="mb-2">Twist lid off</h5>
+        <p class="text-muted">A lid-twisting human motion becomes a compact hand whose coupled motion rotates the lid.</p>
+        <div class="row row-cols-1 row-cols-md-2 g-3">
+          <div class="col">
+            <video src="media/lid-human.webm" controls muted autoplay loop playsinline preload="metadata" class="w-100 media-video"></video>
+            <p class="small text-center mt-2">Input demo</p>
+          </div>
+          <div class="col">
+            <video src="media/lid-robot.webm" controls muted autoplay loop playsinline preload="metadata" class="w-100 media-video"></video>
+            <p class="small text-center mt-2">Generated hand</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="mb-4">
+        <h5 class="mb-2">Key insertion</h5>
+        <p class="text-muted">A key insertion demonstration generates a task-specific hand that holds and inserts the key.</p>
+        <div class="row row-cols-1 row-cols-md-2 g-3">
+          <div class="col">
+            <video src="media/key-human.webm" controls muted autoplay loop playsinline preload="metadata" class="w-100 media-video"></video>
+            <p class="small text-center mt-2">Input demo</p>
+          </div>
+          <div class="col">
+            <video src="media/key-robot.webm" controls muted autoplay loop playsinline preload="metadata" class="w-100 media-video"></video>
+            <p class="small text-center mt-2">Generated hand</p>
+          </div>
+        </div>
+      </div>
+
+      <div>
+        <h5 class="mb-2">Circle-square mimic</h5>
+        <p class="text-muted">The thumb follows a circle while the index finger follows a square, producing structured motion with predefined trajectories.</p>
+        <div class="row row-cols-1 row-cols-md-2 g-3">
+          <div class="col">
+            <div class="trajectory-card">
+              <svg viewBox="0 0 640 360" role="img" aria-label="Thumb circle and index square target trajectories">
+                <rect width="640" height="360" rx="10" fill="#f7f8f5"></rect>
+                <path d="M84 290H300M84 290V70" fill="none" stroke="#d4ddd8" stroke-width="3"></path>
+                <path d="M340 290H556M340 290V70" fill="none" stroke="#d4ddd8" stroke-width="3"></path>
+                <circle cx="190" cy="178" r="74" fill="none" stroke="#2d8c83" stroke-width="12"></circle>
+                <path d="M406 104H520V218H406Z" fill="none" stroke="#c05f4f" stroke-width="12" stroke-linejoin="round"></path>
+                <circle cx="190" cy="178" r="8" fill="#2d8c83"></circle>
+                <circle cx="406" cy="104" r="8" fill="#c05f4f"></circle>
+                <text x="126" y="322" fill="#2d8c83">thumb circle</text>
+                <text x="392" y="322" fill="#c05f4f">index square</text>
+              </svg>
+            </div>
+            <p class="small text-center mt-2">Target trajectory</p>
+          </div>
+          <div class="col">
+            <video src="media/circle-square.webm" controls muted autoplay loop playsinline preload="metadata" class="w-100 media-video"></video>
+            <p class="small text-center mt-2">Generated hand</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="mb-5">
+      <div class="row justify-content-center">
+        <div class="col-12 col-lg-9">
+          <h5 class="mb-3">Table 2. Task-Specific Tracking Error</h5>
+          <p class="text-muted">Mean +/- standard deviation fingertip error in millimeters. Lower is better.</p>
+          <div class="table-responsive">
+            <table class="table table-sm table-striped align-middle">
+              <thead>
+                <tr>
+                  <th>Task</th>
+                  <th>Hand</th>
+                  <th class="text-end">Thumb</th>
+                  <th class="text-end">Index</th>
+                  <th class="text-end">Overall</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td rowspan="2">Lid-off</td>
+                  <td>3-DoF mimic-joint hand</td>
+                  <td class="text-end">1.888 +/- 2.257</td>
+                  <td class="text-end">2.784 +/- 2.775</td>
+                  <td class="text-end">2.336 +/- 2.569</td>
+                </tr>
+                <tr>
+                  <td>3-DoF fully actuated hand</td>
+                  <td class="text-end fw-bold">1.457 +/- 1.903</td>
+                  <td class="text-end fw-bold">2.535 +/- 2.688</td>
+                  <td class="text-end fw-bold">1.996 +/- 2.390</td>
+                </tr>
+                <tr>
+                  <td rowspan="2">Key</td>
+                  <td>3-DoF mimic-joint hand</td>
+                  <td class="text-end fw-bold">2.031 +/- 1.694</td>
+                  <td class="text-end fw-bold">0.174 +/- 0.256</td>
+                  <td class="text-end fw-bold">1.102 +/- 1.526</td>
+                </tr>
+                <tr>
+                  <td>3-DoF fully actuated hand</td>
+                  <td class="text-end">2.282 +/- 1.756</td>
+                  <td class="text-end">3.583 +/- 2.690</td>
+                  <td class="text-end">2.933 +/- 2.362</td>
+                </tr>
+                <tr>
+                  <td rowspan="2">Circle-square</td>
+                  <td>3-DoF mimic-joint hand</td>
+                  <td class="text-end">0.015 +/- 0.005</td>
+                  <td class="text-end fw-bold">1.295 +/- 0.960</td>
+                  <td class="text-end fw-bold">0.655 +/- 0.933</td>
+                </tr>
+                <tr>
+                  <td>3-DoF fully actuated hand</td>
+                  <td class="text-end fw-bold">0.009 +/- 0.002</td>
+                  <td class="text-end">10.851 +/- 4.477</td>
+                  <td class="text-end">5.430 +/- 6.278</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="manufacturing" class="mb-5">
+      <div class="video-container">
+      <h4 class="mb-3 text-center">Manufacturing Pipeline</h4>
+      <div class="row row-cols-1 row-cols-sm-2 row-cols-lg-4 g-3 align-items-stretch">
+        <div class="col d-flex">
+          <div class="pipeline-card">
+            <div class="pipeline-card-media pipeline-card-stack">
+              <img src="media/finger_mesh.jpg" alt="Generate robot hand mesh">
+              <p class="pipeline-card-text">Use simple geometries to generate the mesh, then polish it in Fusion 360.</p>
+            </div>
+            <p class="pipeline-card-caption">Generate robot hand mesh</p>
+          </div>
+        </div>
+        <div class="col d-flex">
+          <div class="pipeline-card">
+            <div class="pipeline-card-media">
+              <video src="media/break-support.webm" controls muted autoplay loop playsinline preload="metadata"></video>
+            </div>
+            <p class="pipeline-card-caption">3D print it and remove support</p>
+          </div>
+        </div>
+        <div class="col d-flex">
+          <div class="pipeline-card">
+            <div class="pipeline-card-media">
+              <video src="media/inplace-joints.webm" controls muted autoplay loop playsinline preload="metadata"></video>
+            </div>
+            <p class="pipeline-card-caption">Print-in-place joints</p>
+          </div>
+        </div>
+        <div class="col d-flex">
+          <div class="pipeline-card">
+            <div class="pipeline-card-media pipeline-card-split">
+              <figure class="pipeline-card-figure">
+                <img src="media/attach_motor.jpg" alt="Attach motor to generated hand">
+              </figure>
+              <p class="pipeline-card-text">Attach the motors to the motor holders at the actuated joints.</p>
+            </div>
+            <p class="pipeline-card-caption">Actuate the hand</p>
+          </div>
+        </div>
+      </div>
+      </div>
+    </section>
+
+    <section id="method" class="mb-5">
+      <h4 class="mb-3 text-center">Method</h4>
+      <p class="text-center text-muted mx-auto section-intro">
+        The method learns hardware under the same simple controller used after fabrication. A trajectory-conditioned actor accelerates low-DoF generation by proposing hardware and control initializations before refinement.
+      </p>
+      <div class="row justify-content-center">
+        <div class="col-12 col-lg-9">
+          <video src="media/method.webm" controls muted autoplay loop playsinline preload="metadata" class="w-100 media-video"></video>
+        </div>
+      </div>
+    </section>
+
+    <section id="citation" class="mb-5">
+      <div class="row justify-content-center">
+        <div class="col-12 col-lg-9">
+          <h5 class="mb-3">BibTeX</h5>
+          <pre><code>@article{yi2026generating,
+  title  = {Generating Robot Hands from Human Demonstrations},
+  author = {Yi, Sha and Hansen, Nicklas and Bai, Xueqian and
+            Sferrazza, Carmelo and Tolley, Michael T. and Wang, Xiaolong},
+  year   = {2026},
+  url    = {https://arxiv.org/abs/2606.20549}
+}</code></pre>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- Bootstrap JS (optional) -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+  <script>
+    document.addEventListener('DOMContentLoaded', () => {
+      const vids = document.querySelectorAll('video.lazy-video');
+      if('IntersectionObserver' in window) {
+        const obs = new IntersectionObserver((entries, observer) => {
+          entries.forEach(entry => {
+            if(entry.isIntersecting) {
+              const v = entry.target;
+              const src = v.querySelector('source').dataset.src;
+              v.querySelector('source').src = src;
+              v.load();
+              v.play().catch(()=>{});
+              observer.unobserve(v);
+            }
+          });
+        }, { rootMargin: '200px' });
+        vids.forEach(v => obs.observe(v));
+      } else {
+        vids.forEach(v => {
+          const src = v.querySelector('source').dataset.src;
+          v.querySelector('source').src = src;
+          v.load();
+          v.play().catch(()=>{});
+        });
+      }
+    });
+  </script>
+</body>
+</html>
