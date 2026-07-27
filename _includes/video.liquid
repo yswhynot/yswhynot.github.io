@@ -6,8 +6,23 @@
   {% endif %}
 >
   {% if extension == 'mp4' or extension == 'webm' or extension == 'ogg' or extension == 'avif' %}
+    {% assign video_src = include.path | relative_url %}
+    {% if include.cache_bust %}
+      {% assign video_src = include.path | relative_url | bust_file_cache %}
+    {% endif %}
     <video
-      src="{% if include.cache_bust %}{{ include.path | relative_url | bust_file_cache }}{% else %}{{ include.path | relative_url }}{% endif %}"
+      {% if include.lazy %}
+        class="lazy-preview-video"
+        data-src="{{ video_src }}"
+        preload="none"
+      {% else %}
+        src="{{ video_src }}"
+        {% if include.preload %}
+          preload="{{ include.preload }}"
+        {% else %}
+          preload="metadata"
+        {% endif %}
+      {% endif %}
       width="100%"
       height="auto"
       style="border-radius: 0.25rem;"
@@ -29,10 +44,13 @@
       {% if include.muted %}
         muted
       {% endif %}
+      {% if include.playsinline %}
+        playsinline
+      {% endif %}
       {% if include.poster %}
         poster="{{ include.poster }}"
       {% endif %}
-    />
+    ></video>
   {% else %}
     <iframe
       src="{{ include.path }}"
@@ -48,7 +66,7 @@
       {% if include.title %}
         title="{{ include.title }}"
       {% endif %}
-    />
+    ></iframe>
   {% endif %}
   {% if include.caption %}
     <figcaption class="caption">{{ include.caption }}</figcaption>

@@ -28,7 +28,7 @@
       {% if entry.preview %}
         {% if entry.preview contains '://' %}
           <!-- External Image -->
-          <img class="preview rounded" src="{{ entry.preview }}" style="max-width: 200px;">
+          <img class="preview rounded" src="{{ entry.preview }}" style="max-width: 200px;" loading="lazy" decoding="async">
         {% else %}
           <!-- Internal File -->
           {% assign entry_path = entry.preview | prepend: '/assets/img/publication_preview/' %}
@@ -42,12 +42,13 @@
               loop=true
               muted=true
               playsinline=true
-              preload="metadata"
+              preload="none"
+              lazy=true
             %}
           {% else %}
             {%
               include figure.liquid
-              loading="eager"
+              loading="lazy"
               path=entry_path
               sizes = "200px"
               class="preview rounded"
