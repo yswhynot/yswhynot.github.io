@@ -31,12 +31,10 @@ announcements:
 # Enable the 'Social' icons on this page
 social: false
 ---
-\[Yisha\]   \[伊 莎\]    [shayi@ucsd.edu]()
+\[Yisha\]   \[伊 莎\]    [yswhynot at gmail dot com]()
 
-My research interest centers on using machine learning to design and control novel robotic systems.
+I am a Member of Technical Staff at [Physical Intelligence](https://www.pi.website/), and an incoming Assistant Professor at New York University ([Tandon MAE](https://engineering.nyu.edu/academics/departments/mechanical-and-aerospace-engineering) and [Courant CS](https://cs.nyu.edu/home/index.html)).
 
-I am a Postdoc at UC San Diego working with [Xiaolong Wang](https://xiaolonw.github.io/index.html) and [Mike Tolley](https://tolley.eng.ucsd.edu/), exploring data-driven approaches for robot design. 
-
-I completed my PhD from the [Robotics Institute](http://ri.cmu.edu) at Carnegie Mellon University coadvised by [Katia Sycara](http://www.cs.cmu.edu/~sycara/) and [Zeynep Temel](https://www.ri.cmu.edu/ri-faculty/zeynep-temel/). My research is supported by the CMU Presidential Fellowship (2020 - 2021). Prior to this, I received my MS degree from the same department with [Katia Sycara](http://www.cs.cmu.edu/~sycara/). I completed my BEng in Electronics and Information Engineering at The Hong Kong Polytechnic University. 
+Prior to this, I was a Postdoc at UC San Diego with [Xiaolong Wang](https://xiaolonw.github.io/index.html) and [Mike Tolley](https://tolley.eng.ucsd.edu/). I completed my PhD from the [Robotics Institute](http://ri.cmu.edu) at Carnegie Mellon University coadvised by [Katia Sycara](http://www.cs.cmu.edu/~sycara/) and [Zeynep Temel](https://www.ri.cmu.edu/ri-faculty/zeynep-temel/), where I was supported by the CMU Presidential Fellowship. 
 
 I also spent time at Amazon Robotics, Microsoft, and a couple of early-stage startups.
