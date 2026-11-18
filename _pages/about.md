@@ -31,7 +31,7 @@ announcements:
 # Enable the 'Social' icons on this page
 social: false
 ---
-\[Yisha\]   \[伊 莎\]    [sy5212 at nyu dot edu](mailto:sy5212@nyu.edu)
+\[Yisha\]   \[伊 莎\]    sy5212 at nyu dot edu
 
 I am a Member of Technical Staff at [Physical Intelligence](https://www.pi.website/), and an incoming Assistant Professor at New York University ([Tandon MAE](https://engineering.nyu.edu/academics/departments/mechanical-and-aerospace-engineering) and [Courant CS](https://cs.nyu.edu/home/index.html)).
 
