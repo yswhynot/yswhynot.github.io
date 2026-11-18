@@ -37,4 +37,4 @@ I am a Member of Technical Staff at [Physical Intelligence](https://www.pi.websi
 
 Prior to this, I was a Postdoc at UC San Diego with [Xiaolong Wang](https://xiaolonw.github.io/index.html) and [Mike Tolley](https://tolley.eng.ucsd.edu/). I completed my PhD from the [Robotics Institute](http://ri.cmu.edu) at Carnegie Mellon University coadvised by [Katia Sycara](http://www.cs.cmu.edu/~sycara/) and [Zeynep Temel](https://www.ri.cmu.edu/ri-faculty/zeynep-temel/), where I was supported by the CMU Presidential Fellowship. 
 
-I also spent time at Amazon Robotics, Microsoft, and a couple of early-stage startups.
+🔮 I am starting a lab at NYU focused on robot design, tactile sensing, and scalable robot learning. **I am recruiting PhD students to join in Fall 2027.** Please apply through [Tandon MAE](https://engineering.nyu.edu/academics/programs/mechanical-engineering-phd) or [Courant CS](https://cs.nyu.edu/dynamic/phd/admissions/).
